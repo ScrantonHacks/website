@@ -1,11 +1,13 @@
-import React from 'react'
-import Login from '../components/Login'
+import React, { Component } from 'react'
+import HackHero from '../components/HackHero'
 
-export default class Index extends React.Component {
+export default class Index extends Component {
   render() {
     return (
       <div>
-        <Login />
+      	<HackHero chapter={0} content="Hello"/>
+      	<HackHero chapter={1} content="Hello Again"/>
+      	<HackHero chapter={2} content="Hello another time"/>
       </div>
     )
   }
