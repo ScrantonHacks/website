@@ -11,14 +11,12 @@ export default class HackHero extends Component {
 
 	render() {
 		return (
-			<Layer align='center' flush={true} peek={true}>
-				<Article 
-					scrollStep={true}
-					selected= {this.props.chapter}
-				>
-					{this.props.content}
-				</Article>
-			</Layer>
+			<Article 
+				scrollStep
+				selected = {this.props.chapter}
+			>
+				{this.props.content}
+			</Article>
 		);
 	}
 }
