@@ -15,7 +15,7 @@ export default class HackHero extends Component {
 				scrollStep
 				selected = {this.props.chapter}
 			>
-				{this.props.content}
+				{this.props.children}
 			</Article>
 		);
 	}
