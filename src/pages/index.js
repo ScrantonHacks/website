@@ -13,8 +13,10 @@ export default class Index extends Component {
       	<HackHero chapter={0}>
           <BackgroundParallaxVideo 
             videoSource = {ScrantonFlyoverVideo}
-            startTime = {10}
-          />
+            startTime = {12}
+          >
+            <h1>ScrantonHacks</h1>
+          </BackgroundParallaxVideo>
       	</HackHero>
       </Box>
     )

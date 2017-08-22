@@ -37,14 +37,7 @@ export default class BackgroundParallaxVideo extends Component {
     })
   };
 
-  handleOnPlay = () => {
-    this.setState({isPlaying: true});
-  }
-
-
   render() {
-    console.log(this.state.windowWidth);
-    console.log(this.state.windowHeight);
     return (
       <div>
         <Parallax strength={1000}>
@@ -69,7 +62,7 @@ export default class BackgroundParallaxVideo extends Component {
             width: this.state.windowWidth,
             height: this.state.windowHeight
             }} className="transparent-scranton-bg">
-            <h1>Hello</h1>
+            {this.props.children}
           </div>
         </Parallax>
       </div>
