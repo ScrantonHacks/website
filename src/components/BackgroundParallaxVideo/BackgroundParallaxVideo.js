@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import VideoPlayer from 'react-background-video-player';
 import { Parallax, Background } from 'react-parallax';
+
+
 export default class BackgroundParallaxVideo extends Component {
   
   constructor(props) {
@@ -41,6 +43,8 @@ export default class BackgroundParallaxVideo extends Component {
 
 
   render() {
+    console.log(this.state.windowWidth);
+    console.log(this.state.windowHeight);
     return (
       <div>
         <Parallax strength={300}>
@@ -58,7 +62,7 @@ export default class BackgroundParallaxVideo extends Component {
               zIndex = {0}
             />
           </Background>
-          <div className = 'transparent-scranton-bg' />
+          <h1 className="transparent-scranton-bg">Hello</h1>
         </Parallax>
       </div>
     );
