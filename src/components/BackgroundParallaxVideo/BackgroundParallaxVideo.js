@@ -47,8 +47,12 @@ export default class BackgroundParallaxVideo extends Component {
     console.log(this.state.windowHeight);
     return (
       <div>
-        <Parallax strength={300}>
+        <Parallax strength={1000}>
           <Background>
+            <div style={{
+              width: this.state.windowWidth,
+              height: this.state.windowHeight
+            }} />
             <VideoPlayer 
               playsInline
               containerWidth = {this.state.windowWidth}
@@ -59,10 +63,14 @@ export default class BackgroundParallaxVideo extends Component {
               muted
               loop
               autoPlay
-              zIndex = {0}
             />
           </Background>
-          <h1 className="transparent-scranton-bg">Hello</h1>
+          <div style={{
+            width: this.state.windowWidth,
+            height: this.state.windowHeight
+            }} className="transparent-scranton-bg">
+            <h1>Hello</h1>
+          </div>
         </Parallax>
       </div>
     );
