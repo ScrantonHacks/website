@@ -1,3 +1,4 @@
+import React from 'react';
 import SubscribeForm from 'react-mailchimp-subscribe';
 
 /**
@@ -5,7 +6,7 @@ import SubscribeForm from 'react-mailchimp-subscribe';
  *
  */
 const formProps = {
-  action: '//scrantonhacks.us16.list-manage.com/subscribe/post?u=5d0b0c770c04055d190170b52&amp;id=27660098a2'
+  action: '//scrantonhacks.us16.list-manage.com/subscribe/post?u=5d0b0c770c04055d190170b52&amp;id=27660098a2',
   messages: {
     inputPlaceholder: "Email",
     btnLabel: "Subscribe",
@@ -29,4 +30,6 @@ const formProps = {
   }
 }
  
-export const Form = () => <SubscribeFrom {...formProps}/>
+const Form = (props) => <SubscribeForm {...formProps} className={props.className} />;
+
+export default Form;

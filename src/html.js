@@ -14,13 +14,17 @@ export default class HTML extends React.Component {
   render() {
     let css
     if(process.env.NODE_ENV === 'production') {
-      css = (
-        <style
-          dangerouslySetInnerHTML={{
-            __html: require('!raw!../public/styles.css'),
-          }}
-        />
-      )
+      try {
+        css = (
+          <style
+            dangerouslySetInnerHTML={{
+              __html: require('!raw!../public/styles.css'),
+            }}
+          />
+        )
+      } catch (e) {
+        console.log(e);
+      }
     }
 
     return (

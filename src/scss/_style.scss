@@ -7,3 +7,26 @@
   background-color: $scranton-purple-transparent;
 }
 
+
+
+.subscribe-form {
+  > form {
+    > div {
+      width: auto;
+      > input, select, textarea {
+        background-color: $input-box-color !important;
+        color: #fff !important;
+        width: 20%;
+      }
+
+      > button {
+        background-color: $attention-color-transparent !important;
+        width: 100%;
+        margin-top: 1em;
+      }
+    }
+  }
+
+
+}
+
