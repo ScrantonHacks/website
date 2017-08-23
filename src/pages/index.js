@@ -22,6 +22,9 @@ export default class Index extends Component {
             </div>
           </BackgroundParallaxVideo>
       	</HackHero>
+        <HackHero chapter={1}>
+          <h1> test </h1>
+        </HackHero>
       </Box>
     )
   }

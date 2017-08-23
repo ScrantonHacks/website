@@ -1,5 +1,5 @@
 import React from 'react';
-import SubscribeForm from 'react-mailchimp-subscribe';
+import SubscribeForm from 'react-mailchimp-subscribe-scrantonhacks';
 
 /**
  * Edit action for susbscriber form here
