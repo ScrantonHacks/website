@@ -13,8 +13,8 @@ export default class BackgroundParallaxVideo extends Component {
       progress: 0,
       currentTime: 0,
       duration: 0,
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
+      windowWidth: 0,
+      windowHeight: 0,
     };
   }
 
@@ -23,18 +23,28 @@ export default class BackgroundParallaxVideo extends Component {
       isPlaying: !this.state.isPaused,
       isMuted: true,
     });
-    window.addEventListener('resize', this.handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', this.handleResize);
+    }
   }
 
   componentWillMount() {
-    window.removeEventListener('resize', this.handleResize);
+    if(typeof window !== 'undefined') {
+      this.setState({
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight
+      });
+      window.removeEventListener('resize', this.handleResize);
+    }
   }
 
   handleResize = () => {
-    this.setState({
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
-    })
+    if (typeof window !== 'undefined') {
+      this.setState({
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
+      });
+    }
   };
 
   render() {
@@ -45,7 +55,7 @@ export default class BackgroundParallaxVideo extends Component {
             <div style={{
               width: this.state.windowWidth,
               height: this.state.windowHeight
-            }} />
+              }} />
             <VideoPlayer 
               playsInline
               containerWidth = {this.state.windowWidth}
