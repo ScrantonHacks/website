@@ -1,12 +1,41 @@
 /**
  *@author Andrew Plaza
  * Styles for ScrantonHacks website
+ * Switch to a more React-ish CSS Solution such as glamour or css modules
  */
 
 .transparent-scranton-bg {
   background-color: $scranton-purple-transparent;
 }
 
+.text-center { text-align: center !important; }
+
+.text-white { 
+  color: $white;
+  max-width: 100%;
+  > p {
+    max-width: 100% !important;
+    color: $white !important;
+  }
+
+  > h1 {
+    color: $white;
+  }
+  > h2 {
+    color: $white;
+  }
+  > h3 { 
+    color: $white;
+  }
+
+  > h4 {
+    color: $white;
+  }
+
+  h5 {
+    color: $white;
+  }
+}
 
 
 .subscribe-form {
@@ -26,7 +55,5 @@
       }
     }
   }
-
-
 }
 

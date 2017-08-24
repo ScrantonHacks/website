@@ -5,7 +5,8 @@ import ScrantonFlyoverVideo from '../videos/scranton-flyover.mp4';
 
 import HackHero from '../components/HackHero';
 import BackgroundParallaxVideo from '../components/BackgroundParallaxVideo';
-import MailchimpForm from '../components/MailchimpForm';
+import SubscribeSplash from '../components/SubscribeSplash';
+import SponsorCrumb from '../components/SponsorCrumb';
 
 export default class Index extends Component {
   render() {
@@ -16,9 +17,9 @@ export default class Index extends Component {
             videoSource = {ScrantonFlyoverVideo}
             startTime = {12}
           >
-            <div>
-              <h1>ScrantonHacks</h1>
-              <MailchimpForm className="subscribe-form"/>
+            <div className="text-center">
+              <SubscribeSplash />
+              <SponsorCrumb />
             </div>
           </BackgroundParallaxVideo>
       	</HackHero>

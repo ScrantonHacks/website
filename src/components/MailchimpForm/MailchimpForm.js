@@ -29,7 +29,5 @@ const formProps = {
     }
   }
 }
- 
-const Form = (props) => <SubscribeForm {...formProps} className={props.className} />;
+export default (props) => <SubscribeForm {...formProps} className={props.className} />;
 
-export default Form;
