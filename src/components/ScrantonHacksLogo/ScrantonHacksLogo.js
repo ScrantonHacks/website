@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrantonHacksLogo from '../../pictures/BaseLogo_transparent_bg_white_letters_black_outline.png';
+import ScrantonHacksLogo from '../../pictures/BaseLogo_white_around_s_and_h.png';
 // white letters with black outline on 'S' and 'H'
 
 export default (props) => {
@@ -7,8 +7,8 @@ export default (props) => {
     <img src={ScrantonHacksLogo} style={{
       paddingTop: '30px',
       paddingBottom: '20px',
-      width: '35%',
-      height: '35%'
+      width: '40%',
+      height: '40%'
     }}></img>
     );
 };
