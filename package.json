@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-starter-grommet",
-  "description": "Gatsby starter with the Grommet design system",
-  "version": "1.0.0",
-  "author": "Aaron Lampros <alampros@gmail.com>",
+  "name": "ScrantonHacks",
+  "description": "Website for ScrantonHacks University of Scranton Club",
+  "version": "0.1.0-alpha",
+  "author": "Andrew Plaza <aplaza@liqudthink.net>",
   "bugs": {
-    "url": "https://github.com/alampros/gatsby-starter-grommet/issues"
+    "url": "https://github.com/ScrantonHacks/website/issues"
   },
   "scripts": {
     "dev": "gatsby develop",
@@ -34,6 +34,9 @@
   },
   "homepage": "https://github.com/alampros/gatsby-starter-grommet#readme",
   "keywords": [
+    "scranton",
+    "ScrantonHacks",
+    "hackathon",
     "gatsby",
     "starter",
     "gatsby-starter"
@@ -41,6 +44,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alampros/gatsby-starter-grommet.git"
+    "url": "git+https://github.com/ScrantonHacks/website.git"
   }
 }
