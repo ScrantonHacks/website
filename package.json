@@ -30,7 +30,8 @@
     "react-parallax": "^1.4.4",
     "rimp": "^0.1.4",
     "sass-loader": "^4.1.1",
-    "typed.js": "^2.0.5"
+    "typed.js": "^2.0.5",
+    "xhr2": "^0.1.4"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0"
