@@ -26,7 +26,6 @@ export default class Index extends Component {
         <HackHero chapter={1} title={[
           "echo '#! /bin/ScrantonHacks' > about.sh",
           "About Us"]}>
-          <h1> test </h1>
         </HackHero>
       </Box>
     )

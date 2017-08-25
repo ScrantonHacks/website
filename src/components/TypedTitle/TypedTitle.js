@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Typed from 'typed.js';
+import Title from 'grommet/components/Title';
 
 export default class TypedTitle extends Component {
   constructor(props) {
@@ -12,10 +13,10 @@ export default class TypedTitle extends Component {
     // You can pass other options here, such as type speed, back speed, etc
     const options = {
       strings,
-      typeSpeed: 50,
-      backSpeed: 50,
+      typeSpeed: 40,
+      backSpeed: 40,
       loop: true,
-      showCursor: true
+      showCursor: false
     };
 
     // this.el refers to the <span> in the render() method
@@ -28,9 +29,9 @@ export default class TypedTitle extends Component {
 
   render() {
     return (
-      <div className='type-wrap'>
+      <Title className='type-wrap' style={{ paddingLeft: '1em' }}>
         <h1 style={{ whiteSpace: 'pre' }} ref={(el)=> {this.el = el}} />
-      </div>
+      </Title>
     );
   }
 }
