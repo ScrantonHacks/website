@@ -1,1 +1,1 @@
-export { default } from './BackgroundParallaxVideo.js';
+export default from './BackgroundParallaxVideo.js';

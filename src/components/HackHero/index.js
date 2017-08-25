@@ -1,1 +1,1 @@
-export { default } from './HackHero.js';
+export default from './HackHero.js';

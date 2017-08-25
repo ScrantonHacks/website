@@ -2,14 +2,12 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
 // TODO
-export default (props) => {
-  console.log('props');
-  console.log(props);
-  if (typeof props.data === 'undefined') {
+export default ({ data }) => {
+  // data keeps returning undefined here
+  if ( typeof data === 'undefined') {
     return <div />;
   }
-
-  const social = this.props.data.site.siteMetadata.social;
+  const social = data.site.siteMetadata.social;
   return (
   <span>
     <a href="{social.facebook_link}" className="margin-right-1em">
@@ -35,7 +33,7 @@ export default (props) => {
 }
 
 export const query = graphql`
-  query shareQuery {
+  query ShareQuery {
     site {
       siteMetadata {
         social {

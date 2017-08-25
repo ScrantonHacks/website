@@ -6,10 +6,16 @@ import ScrantonFlyoverVideo from '../videos/scranton-flyover.mp4';
 import HackHero from '../components/HackHero';
 import BackgroundParallaxVideo from '../components/BackgroundParallaxVideo';
 import SubscribeSplash from '../components/SubscribeSplash';
-import SponsorCrumb from '../components/SponsorCrumb';
+import SponsorCrumb from '../templates/SponsorCrumb';
 
 export default class Index extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    console.log("PROPS");
+    console.log(this.props);
     return (
     <Box direction='column' margin='none' pad='none'>
       	<HackHero chapter={0}>
@@ -19,7 +25,7 @@ export default class Index extends Component {
           >
             <div className="text-center">
               <SubscribeSplash />
-              <SponsorCrumb />
+              <SponsorCrumb/>
             </div>
           </BackgroundParallaxVideo>
       	</HackHero>

@@ -1,1 +1,2 @@
-export { default, query } from './SocialShare';
+export { default } from './SocialShare.js';
+export query from './SocialShare.js';

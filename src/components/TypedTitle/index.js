@@ -1,1 +1,1 @@
-export { default } from './TypedTitle.js';
+export default from './TypedTitle.js';
