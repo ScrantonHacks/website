@@ -29,11 +29,16 @@ export default class Index extends Component {
             </div>
           </BackgroundParallaxVideo>
       	</HackHero>
-        <HackHero chapter={1} title={[
-          "echo '#! /bin/ScrantonHacks' > about.sh",
-          "About Us"]}>
-        </HackHero>
       </Box>
     )
   }
 }
+
+/*
+
+  leave this out for now
+        <HackHero chapter={1} title={[
+          "echo '#! /bin/ScrantonHacks' > about.sh",
+          "About Us"]}>
+        </HackHero>
+*/
