@@ -6,7 +6,7 @@ import ScrantonFlyoverVideo from '../videos/scranton-flyover.mp4';
 import HackHero from '../components/HackHero';
 import BackgroundParallaxVideo from '../components/BackgroundParallaxVideo';
 import SubscribeSplash from '../components/SubscribeSplash';
-import SponsorCrumb from '../templates/SponsorCrumb';
+import SponsorCrumb from '../components/SponsorCrumb';
 
 export default class Index extends Component {
   constructor(props) {
@@ -14,8 +14,6 @@ export default class Index extends Component {
   }
 
   render() {
-    console.log("PROPS");
-    console.log(this.props);
     return (
     <Box direction='column' margin='none' pad='none'>
       	<HackHero chapter={0}>
@@ -24,8 +22,8 @@ export default class Index extends Component {
             startTime = {12}
           >
             <div className="text-center">
-              <SubscribeSplash />
-              <SponsorCrumb/>
+              <SubscribeSplash data={this.props.data} />
+              <SponsorCrumb data={this.props.data} />
             </div>
           </BackgroundParallaxVideo>
       	</HackHero>
@@ -33,6 +31,22 @@ export default class Index extends Component {
     )
   }
 }
+
+export const query = graphql`
+  query ShareQuery {
+    site {
+      siteMetadata {
+        sponsorEmail
+        social {
+          facebook_link
+          twitter_link
+          instagram_link
+        }
+      }
+    }
+  }
+`;
+
 
 /*
 
