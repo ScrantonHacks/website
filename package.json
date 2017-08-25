@@ -28,6 +28,7 @@
     "react-fontawesome": "^1.6.1",
     "react-mailchimp-subscribe-scrantonhacks": "^1.0.1",
     "react-parallax": "^1.4.4",
+    "rimp": "^0.1.4",
     "sass-loader": "^4.1.1",
     "typed.js": "^2.0.5"
   },

@@ -5,7 +5,13 @@ module.exports = {
     title: 'Scranton Hacks',
     hackathonDate: 'Date: TBA',
     hackYear: '2017',
-    sponsorEmail: 'sponsorship@scrantonhacks.com'
+    sponsorEmail: 'sponsorship@scrantonhacks.com',
+    hackathonLocation: 'University of Scranton Byron',
+    social: {
+      facebook_link: 'https://facebook.com',
+      twitter_link: 'https://twitter.com',
+      instagram_link: 'https://instagram.com' 
+    }
   },
   pathPrefix: '/gatsby-starter-grommet',
   plugins: [

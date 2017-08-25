@@ -29,7 +29,7 @@ export default class TypedTitle extends Component {
 
   render() {
     return (
-      <Title className='type-wrap' style={{ paddingLeft: '1em' }}>
+      <Title className='type-wrap' style={{ paddingLeft: '1em' }} responsive>
         <h1 style={{ whiteSpace: 'pre' }} ref={(el)=> {this.el = el}} />
       </Title>
     );
