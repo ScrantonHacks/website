@@ -45,7 +45,8 @@ export default class MailchimpForm extends Component {
       buttonValue: props.buttonValue,
       showError: props.showError,
       completeMessage: props.completeMessage,
-      helpText: props.helpText
+      helpText: props.helpText,
+      action: props.action,
     }
     this.validateEmail = this.validateEmail.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -66,6 +67,7 @@ export default class MailchimpForm extends Component {
   }
 
   handleSubmit(e) {
+    console.log(this.state.action);
     e.preventDefault();
     let self = this;
     let isValid = this.state.valid;
@@ -75,7 +77,7 @@ export default class MailchimpForm extends Component {
         method: 'get',
         type: 'jsonp',
         contentType: 'application/json',
-        url: this.state.mailChimpUrl,
+        url: this.state.action,
         data: {EMAIL: this.state.emailAddress, STATUS: 'subscribed'},
         jsonpCallback: 'c'
       })
