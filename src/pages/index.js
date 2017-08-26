@@ -7,6 +7,7 @@ import HackHero from '../components/HackHero';
 import BackgroundParallaxVideo from '../components/BackgroundParallaxVideo';
 import SubscribeSplash from '../components/SubscribeSplash';
 import SponsorCrumb from '../components/SponsorCrumb';
+import ScrantonHacksLogo from '../components/ScrantonHacksLogo';
 
 export default class Index extends Component {
   constructor(props) {
@@ -21,13 +22,14 @@ export default class Index extends Component {
             videoSource = {ScrantonFlyoverVideo}
             startTime = {12}
           >
-            <div className="text-center">
+            <div className="text-center text-white">
+              <ScrantonHacksLogo />
               <SubscribeSplash data={this.props.data} />
               <SponsorCrumb data={this.props.data} />
             </div>
           </BackgroundParallaxVideo>
       	</HackHero>
-      </Box>
+     </Box>
     )
   }
 }
