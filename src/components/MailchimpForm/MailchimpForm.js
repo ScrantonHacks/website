@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import reqwest from 'reqwest';
-import { isemail } from 'isemail';
+import isemail from 'isemail';
 import styled from 'styled-components';
 
 import TextInput from 'grommet/components/TextInput';
@@ -20,6 +20,21 @@ const FormContainer = styled.div`
   text-align: center;
 `;
 
+const StyledText = styled.p`
+  color: #fff !important;
+  text-align: center;
+  max-width: 100% !important;
+`;
+
+const SubscribeForm = styled(Form)`
+  width: 100% !important;
+`;
+
+const InputField = styled(TextInput)`
+  width: 23.3em;
+  background-color: rgba(73, 69, 82, 0.8) !important;
+`;
+
 export default class MailchimpForm extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +47,9 @@ export default class MailchimpForm extends Component {
       completeMessage: props.completeMessage,
       helpText: props.helpText
     }
+    this.validateEmail = this.validateEmail.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.getValid = this.getValid.bind(this);
   }
 
   static get defaultProps () {
@@ -49,6 +67,7 @@ export default class MailchimpForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let self = this;
     let isValid = this.state.valid;
 
     if (isValid) {
@@ -61,33 +80,34 @@ export default class MailchimpForm extends Component {
         jsonpCallback: 'c'
       })
       .then(function (resp) {
-        this.setState({
+        self.setState({
           submitted: true
         })
       })
       .fail(function (err, msg) {
         console.log(err)
-        this.setState({
+        self.setState({
           submitted: true
         })
       })
       .always(function (resp) {
-        this.setState({
+        self.setState({
           submitted: true
         })
       });
-      this.setState({
+      self.setState({
         submitted: true
       });
     }
   }
 
   validateEmail(e) {
+    let self = this;
     this.setState({
       typing: true
     });
 
-    if(isemail(e.currentTarget.value)) {
+    if(isemail.validate(e.currentTarget.value)) {
       this.setState({
         valid: true,
         emailAddress: e.currentTarget.value,
@@ -112,11 +132,11 @@ export default class MailchimpForm extends Component {
       <FormContainer className={this.getValid()}>
       {!this.state.submitted ? 
         <div>
-          <form onSubmit={this.handleSubmit}>
-            <input type='email' onChange={this.validateEmail} ref='email' placeholder={this.state.placeholder} />
+          <SubscribeForm pad='none' onSubmit={this.handleSubmit}>
+            <InputField type='email' onDOMChange={this.validateEmail} ref='email' placeHolder={this.state.placeholder} />
             <br />
-            <SplashButton label={this.props.buttonValue} />
-          </form>
+            <SplashButton label={this.props.buttonValue} type='submit' onClick={this.handleSubmit}/>
+          </SubscribeForm>
           {this.state.showError ?
             <div>
               {!this.state.valid && this.state.isTyping ? 
@@ -125,7 +145,7 @@ export default class MailchimpForm extends Component {
             </div>
           : null}
         </div>
-      : <p>{this.state.completeMessage}</p>}
+      : <StyledText>{this.state.completeMessage}</StyledText>}
       </FormContainer>
     );
   }
