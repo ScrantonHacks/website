@@ -1,18 +1,19 @@
 import React from 'react';
-import ScrantonHacksLogo from '../../pictures/BaseLogo_white_around_s_and_h.png';
+import ScrantonHacksLogo from '../../pictures/BaseLogo_white_around_s_and_h_TRIMMED_SMALL.png';
 
 import Image from 'grommet/components/Image';
-// white letters with black outline on 'S' and 'H'
+import styled from 'styled-components'
+
+const Logo = styled(Image)`
+  padding-top: 40px;
+  padding-bottom: 30px;
+`;
 
 export default (props) => {
   return (
-    <Image 
-    src={ScrantonHacksLogo} 
-    size='large'
-    style={{
-      paddingTop: '40px',
-      paddingBottom: '30px',
-      }}
+    <Logo 
+      src={ScrantonHacksLogo} 
+      size='large'
     />
-    );
+  );
 };

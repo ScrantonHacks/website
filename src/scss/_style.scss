@@ -42,23 +42,3 @@
     color: $white;
   }
 }
-
-.sub-btn {
-  background-color: $attention-color-transparent !important;
-  width: 100%;
-  display: block;
-  vertical-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1em;
-}
-
-.subscribe-form {
-  > input, select, textarea {
-    float: none; 
-    background-color: $input-box-color !important;
-    color: $white !important;
-    width: 24em;
-  }
-}
-
