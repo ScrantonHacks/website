@@ -29,7 +29,7 @@ export default class Index extends Component {
             </div>
           </BackgroundParallaxVideo>
       	</HackHero>
-        <HackHero chapter={1} title={[
+        <HackHero chapter={1} style={{marginTop: '-3px'}} title={[
           "echo '#! /bin/ScrantonHacks' > about.sh",
           "About Us"]} gradientBg>
         </HackHero>

@@ -34,6 +34,7 @@ export default class HackHero extends Component {
 			gradientBg: props.gradientBg,
 			windowWidth: 0,
 			windowHeight: 0,
+			style: props.style,
 		};
 		this.granimSettings = {
 			element: `#canvas-${props.chapter}`,
@@ -89,7 +90,7 @@ export default class HackHero extends Component {
 
 	render() {
 		return (
-			<div>
+			<div style={this.state.style}>
 				{this.state.gradientBg ? 
 					<HeroHidden scrollStep selected = {this.state.chapter} >
 						<Parallax strength={1}>
