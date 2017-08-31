@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
 export default ({ data }) => {
-  const social = data.site.siteMetadata.social;
+  const social = data.social;
   return (
     <span>
       <a href={social.facebook_link} className="margin-right-1em">

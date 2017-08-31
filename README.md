@@ -3,6 +3,5 @@ The Scranton Hacks Hackathon Website
 
 
 TODO:
-
-Use a React-CSS solution
+set up site metadata with React Helmet
 

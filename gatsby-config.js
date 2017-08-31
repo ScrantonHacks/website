@@ -2,7 +2,8 @@ const autoprefixer = require('autoprefixer')
 
 module.exports = {
   siteMetadata: {
-    title: 'Scranton Hacks',
+    title: 'Scranton Hacks 2017',
+    description: '',
     hackathonDate: 'Date: TBA',
     hackYear: '2017',
     sponsorEmail: 'sponsorship@scrantonhacks.com',
@@ -11,7 +12,7 @@ module.exports = {
       facebook_link: 'https://www.facebook.com/groups/397712937282963/',
       twitter_link: 'https://twitter.com',
       instagram_link: 'https://www.instagram.com/scranton_hacks/',
-    }
+    },
   },
   pathPrefix: '/',
   plugins: [
@@ -26,6 +27,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-styled-components`,
+    'gatsby-plugin-react-helmet'
   ],
 }
 

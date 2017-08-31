@@ -12,6 +12,9 @@ import ScrantonHacksLogo from '../components/ScrantonHacksLogo';
 export default class Index extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: props.data.site.siteMetadata
+    }
   }
 
   render() {
@@ -24,8 +27,8 @@ export default class Index extends Component {
           >
             <div className="text-center text-white">
               <ScrantonHacksLogo />
-              <SubscribeSplash data={this.props.data} />
-              <SponsorCrumb data={this.props.data} />
+              <SubscribeSplash title={this.state.data.title} />
+              <SponsorCrumb data={this.state.data} />
             </div>
           </BackgroundParallaxVideo>
       	</HackHero>
@@ -39,10 +42,11 @@ export default class Index extends Component {
 }
 
 export const query = graphql`
-  query ShareQuery {
+  query IndexQuery {
     site {
       siteMetadata {
         sponsorEmail
+        title
         social {
           facebook_link
           twitter_link

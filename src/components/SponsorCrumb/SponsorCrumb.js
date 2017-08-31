@@ -26,7 +26,7 @@ const StyledText = styled.p`
 export default ({ data }) =>
   <Container>
     <SplashButton onClick={onSponsorClick} label='Become a Sponsor'/>
-    <StyledText>Or email us at {data.site.siteMetadata.sponsorEmail}</StyledText>
+    <StyledText>Or email us at {data.sponsorEmail}</StyledText>
     <SocialShare data={data} />
   </Container>
 ;
