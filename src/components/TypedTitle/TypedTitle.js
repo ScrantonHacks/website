@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import Typed from 'typed.js';
 import Title from 'grommet/components/Title';
 
+import styled from 'styled-components';
+
+const StyledTitle = styled(Title)`
+  margin-left: 2em;
+`;
+
 export default class TypedTitle extends Component {
   constructor(props) {
     super(props);
@@ -29,9 +35,15 @@ export default class TypedTitle extends Component {
 
   render() {
     return (
-      <Title className='type-wrap' style={{ paddingLeft: '1em' }} responsive>
-        <h1 style={{ whiteSpace: 'pre' }} ref={(el)=> {this.el = el}} />
-      </Title>
+      <StyledTitle responsive>
+        <h1 style=
+          {{
+            whiteSpace: 'pre', 
+            textAlign: 'center', 
+            width: '100%' 
+          }}
+        ref={(el)=> {this.el = el}} />
+      </StyledTitle>
     );
   }
 }

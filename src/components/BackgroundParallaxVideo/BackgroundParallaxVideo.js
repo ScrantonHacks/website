@@ -50,7 +50,7 @@ export default class BackgroundParallaxVideo extends Component {
   render() {
     return (
       <div>
-        <Parallax strength={1000}>
+        <Parallax strength={0}>
           <Background>
             <div style={{
               width: this.state.windowWidth,

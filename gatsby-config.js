@@ -13,7 +13,7 @@ module.exports = {
       instagram_link: 'https://www.instagram.com/scranton_hacks/',
     }
   },
-  pathPrefix: '/gatsby-starter-grommet',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: 'custom-sass-loader',
