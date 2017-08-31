@@ -16,11 +16,6 @@ import TypedTitle from '../TypedTitle';
  * @title { array[strings] }
  */
 
-const ScrollAnimationZ = styled(ScrollAnimation)`
-	position: relative;
-	z-index: 1;
-`;
-
 const HeroHidden = styled(Hero)`
 	overflow: hidden !important;
 `;
@@ -96,24 +91,22 @@ export default class HackHero extends Component {
 		return (
 			<div>
 				{this.state.gradientBg ? 
-					<ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'>
-						<HeroHidden scrollStep selected = {this.state.chapter} >
-							<Parallax strength={1}>
-								<Background>
-									<Canvas 
-										id={`canvas-${this.state.chapter}`} 
-										style={{
-											width: this.state.windowWidth,
-											height: this.state.windowHeight
-										}}
-									/>
-								</Background> 
-								{this.getTitle()}
-								<div style={{height: this.state.windowWidth, width: '500px'}} />
-								{this.props.children}
-							</Parallax> 
-						</HeroHidden>
-					</ScrollAnimation>
+					<HeroHidden scrollStep selected = {this.state.chapter} >
+						<Parallax strength={1}>
+							<Background>
+								<Canvas 
+									id={`canvas-${this.state.chapter}`} 
+									style={{
+										width: this.state.windowWidth,
+										height: this.state.windowHeight
+									}}
+								/>
+							</Background> 
+							{this.getTitle()}
+							<div style={{height: this.state.windowWidth, width: '500px'}} />
+							{this.props.children}
+						</Parallax> 
+					</HeroHidden>
 					:
 					<HeroHidden scrollStep selected = {this.state.chapter} >
 						{this.getTitle()}
