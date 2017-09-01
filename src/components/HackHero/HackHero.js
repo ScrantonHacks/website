@@ -59,35 +59,42 @@ export default class HackHero extends Component {
 		}
 	};
 
+	getGradientBg() {
+		return (
+			<div style={{ height: '100%', width: '100%'}}>
+				<Canvas id={`canvas-${this.state.offset}`} />
+			</div>
+		);
+	}
+
 	render() {
 		if(this.state.gradientBg) {
 			return (
 				<ParallaxContainer 
-					backgrounds={Array(<Canvas id={`canvas-${this.state.offset}`} />)} 
+					backgrounds={Array(this.getGradientBg())} 
 					offset={this.state.offset}
 				>
-					{this.getTitle()}
+					<TypedTitle strings={this.props.title} />
 					{this.props.children}
 				</ParallaxContainer>
 			);
 		}
-		return (
-			<Box full responsive size='full' textAlign='center'>
-				{this.state.scrantonVideo ? 
-          <BackgroundParallaxVideo 
-            videoSource = {ScrantonFlyoverVideo}
-            startTime = {12}
-          >
-						{this.getTitle()}
-						{this.props.children}
-					</BackgroundParallaxVideo>
-				 : 
-				 <div>
-				 	{this.getTitle()}
-				 	{this.props.children}
-				 </div>
-				}
-			</Box>
+		if (this.state.scrantonVideo) {
+			return (
+				<BackgroundParallaxVideo
+					videoSource = {ScrantonFlyoverVideo}
+					offset={0}
+				>
+					{this.getTitle()}
+					{this.props.children}
+				</BackgroundParallaxVideo>
+			);
+		}
+		return(
+			<div>
+				{this.getTitle()}
+				{this.props.children}
+			</div>
 		);
 	}
 }

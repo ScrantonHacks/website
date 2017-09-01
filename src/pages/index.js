@@ -28,8 +28,7 @@ export default class Index extends Component {
 
   render() {
     return (
-    <Box direction='column' margin='none' pad='none'>
-      <Parallax ref='parallax' pages={2}>
+      <div>
       	<HackHero offset={0} scrantonVideo>
           <div className="text-center text-white">
             <ScrantonHacksLogo />
@@ -45,9 +44,8 @@ export default class Index extends Component {
           </TextContainer>
           <ThreeIconsMotto motto={this.state.landingContent.motto} />
         </HackHero>
-      </Parallax>
-     </Box>
-    )
+      </div>
+    );
   }
 }
 

@@ -13,6 +13,7 @@ export default class BackgroundParallaxVideo extends Component {
       progress: 0,
       currentTime: 0,
       duration: 0,
+      offset: props.offset,
     };
   }
 
@@ -39,6 +40,7 @@ export default class BackgroundParallaxVideo extends Component {
   render() {
     return (
       <ParallaxContainer 
+        offset={this.state.offset}
         backgrounds = {
           Array(
             this.getVideoBackground(),

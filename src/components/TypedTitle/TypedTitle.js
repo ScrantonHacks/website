@@ -9,6 +9,8 @@ const TextContainer = styled(Title)`
   color: #ddd;
   margin-top: 2em;
   margin-bottom: 2em;
+  width: 100%;
+  text-align: center;
 `;
 
 export default class TypedTitle extends Component {

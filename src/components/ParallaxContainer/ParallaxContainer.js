@@ -3,11 +3,17 @@ import Box from 'grommet/components/Box';
 import Parallax from 'react-springy-parallax';
 import styled from 'styled-components';
 
+/* bakgrounds go in order you want the depth to be
+ * so if you want a color in front of a video,
+ * you pass the video first, and then the color to use
+ */
+
 const getBackgrounds = (backgrounds, offset) => {
   let key = 0;
   return backgrounds.map((background) => {
+    console.log("OFFSET: " + offset);
     key += 1;
-    if(background.color !== 'undefined') {
+    if(typeof background.color !== 'undefined') {
       return (
         <Parallax.Layer 
           style={{backgroundColor: background.color}}
@@ -17,7 +23,7 @@ const getBackgrounds = (backgrounds, offset) => {
       );
     }
     return (
-      <Parallax.Layer key={key} offset={offset}>
+      <Parallax.Layer offset={offset} key={key}>
         {background}
       </Parallax.Layer>
     );
@@ -25,9 +31,11 @@ const getBackgrounds = (backgrounds, offset) => {
 }
 
 export default ({children, backgrounds, offset}) =>
+  <div>
+    {getBackgrounds(backgrounds, offset)}
     <Parallax.Layer offset={offset} speed={0.5}>
-      {getBackgrounds(backgrounds, offset)}
       <Box full responsive size='full' textAlign='center'>
         {children}
       </Box>
-    </Parallax.Layer> ;
+    </Parallax.Layer>
+  </div>;
