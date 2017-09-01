@@ -15,7 +15,7 @@ const Logo = styled.img`
 
 export default (props) => {
   return (
-    <Anime scale={[.2, .5]} easing='easeInOutExpo' duration={5000}>
+    <Anime scale={[.5, .5]} easing='easeInOutExpo' duration={5000}>
       <img src={ScrantonHacksLogo} />
     </Anime>
   );

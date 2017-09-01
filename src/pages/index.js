@@ -17,6 +17,10 @@ const TextContainer = styled.div`
   color: #ddd;
 `;
 
+const H3 = styled.h3`
+  font-size: 2em;
+`;
+
 export default class Index extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +44,7 @@ export default class Index extends Component {
           "echo '#! /bin/ScrantonHacks' > about.sh",
           "About Us"]} gradientBg>
           <TextContainer>
-            <h3>{this.state.landingContent.about}</h3>
+            <H3>{this.state.landingContent.about}</H3>
           </TextContainer>
           <ThreeIconsMotto motto={this.state.landingContent.motto} />
         </HackHero>

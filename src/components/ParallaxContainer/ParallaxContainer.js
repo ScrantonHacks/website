@@ -7,6 +7,9 @@ import styled from 'styled-components';
  * so if you want a color in front of a video,
  * you pass the video first, and then the color to use
  */
+const ParallaxBox = styled(Box)`
+  padding-bottom: 3em !important;
+`;
 
 const getBackgrounds = (backgrounds, offset) => {
   let key = 0;
@@ -34,8 +37,8 @@ export default ({children, backgrounds, offset}) =>
   <div>
     {getBackgrounds(backgrounds, offset)}
     <Parallax.Layer offset={offset} speed={0.5}>
-      <Box full responsive size='full' textAlign='center'>
+      <ParallaxBox responsive size='full' textAlign='center' pad='none' margin='none' justify='center'>
         {children}
-      </Box>
+      </ParallaxBox>
     </Parallax.Layer>
   </div>;

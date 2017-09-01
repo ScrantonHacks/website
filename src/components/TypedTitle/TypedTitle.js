@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
 import Typed from 'typed.js';
 import Title from 'grommet/components/Title';
+import Heading from 'grommet/components/Heading';
 
 import styled from 'styled-components';
-
-const TextContainer = styled(Title)`
-  margin: auto;
-  color: #ddd;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  width: 100%;
-  text-align: center;
-`;
 
 export default class TypedTitle extends Component {
   constructor(props) {
@@ -40,18 +32,15 @@ export default class TypedTitle extends Component {
 
   render() {
     return (
-      <TextContainer responsive>
-        <h1 
-          ref={(el)=> {this.el = el}} 
-          style=
-            {{
-              width: '100%',
-              margin: 'auto',
-              textAlign: 'center',
-              whiteSpace: 'pre'
-            }}
-        />
-      </TextContainer>
+      <Heading
+        align='center'
+        strong
+        tag='h2'
+        margin='large'
+        style={{color: '#ddd', height: '1.3em'}}
+      >
+        <div ref={(el) => {this.el = el}}/>
+      </Heading>
     );
   }
 }

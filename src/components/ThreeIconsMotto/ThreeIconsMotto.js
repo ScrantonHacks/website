@@ -28,30 +28,36 @@ const TextContainer = styled.div`
   color: #dddccc;
   margin-top: 2em;
 `;
+const MottoTitle = styled.h2`
+  font-size: 2em !important;
+`;
+const MottoContent = styled.h4`
+  font-size: 1.4em !important;
+`;
 
 export default ({motto}) =>
-  <Columns justify="center">
-    <Box align="center" pad="none" margin="small" direction="column">
-      <StyledDeploy size='xlarge'/>
+  <Columns justify="center" responsive size='medium'>
+    <Box align="center" pad="none" margin="none" direction="column">
+      <StyledDeploy size='large'/>
       <TextContainer>
-        <h2>Build</h2>
-        <h3>{motto.build}</h3>
+        <MottoTitle>Build</MottoTitle>
+        <MottoContent>{motto.build}</MottoContent>
       </TextContainer>
     </Box>
 
-    <Box align="center" pad="none" margin="small" direction="column">
-      <StyledSync size='xlarge' />
+    <Box align="center" pad="none" margin="none" direction="column">
+      <StyledSync size='large' />
       <TextContainer>
-        <h2>Connect</h2>
-        <h3>{motto.connect}</h3>
+        <MottoTitle>Connect</MottoTitle>
+        <MottoContent>{motto.connect}</MottoContent>
       </TextContainer>
     </Box>
 
-    <Box align="center" pad="none" margin="small" direction="column">
-      <StyledTechnology size='xlarge' />
+    <Box align="center" pad="none" margin="none" direction="column">
+      <StyledTechnology size='large' />
       <TextContainer>
-        <h2>Learn</h2>
-        <h3>{motto.learn}</h3>
+        <MottoTitle>Learn</MottoTitle>
+        <MottoContent>{motto.learn}</MottoContent>
       </TextContainer>
     </Box>
   </Columns>

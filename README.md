@@ -3,6 +3,7 @@ The Scranton Hacks Hackathon Website
 
 
 TODO:
-set up site metadata with React Helmet
-Encapsulate styled-components CSS
+- set up site metadata with React Helmet
+- Encapsulate styled-components CSS
+- Error messages for email form
 
