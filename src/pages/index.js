@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import Box from 'grommet/components/Box';
 
-import ScrantonFlyoverVideo from '../videos/scranton-flyover.mp4';
 import HackHero from '../components/HackHero';
 import BackgroundParallaxVideo from '../components/BackgroundParallaxVideo';
 import SubscribeSplash from '../components/SubscribeSplash';
 import SponsorCrumb from '../components/SponsorCrumb';
 import ScrantonHacksLogo from '../components/ScrantonHacksLogo';
 import ThreeIconsMotto from '../components/ThreeIconsMotto';
+import Parallax from 'react-springy-parallax';
 
 import styled from 'styled-components';
-
-
-const StyledHack = styled(HackHero)`
-  padding-top: 3px;
-`;
 
 const TextContainer = styled.div`
   width: 45%;
@@ -34,26 +29,23 @@ export default class Index extends Component {
   render() {
     return (
     <Box direction='column' margin='none' pad='none'>
-      	<HackHero chapter={0}>
-          <BackgroundParallaxVideo 
-            videoSource = {ScrantonFlyoverVideo}
-            startTime = {12}
-          >
-            <div className="text-center text-white">
-              <ScrantonHacksLogo />
-              <SubscribeSplash title={this.state.siteMetadata.title} />
-              <SponsorCrumb data={this.state.siteMetadata} />
-            </div>
-          </BackgroundParallaxVideo>
+      <Parallax ref='parallax' pages={2}>
+      	<HackHero offset={0} scrantonVideo>
+          <div className="text-center text-white">
+            <ScrantonHacksLogo />
+            <SubscribeSplash title={this.state.siteMetadata.title} />
+            <SponsorCrumb data={this.state.siteMetadata} />
+          </div>
       	</HackHero>
-        <StyledHack chapter={1} title={[
+        <HackHero offset={1} title={[
           "echo '#! /bin/ScrantonHacks' > about.sh",
           "About Us"]} gradientBg>
           <TextContainer>
-            <h3 style={{textAlign: 'center'}}>{this.state.landingContent.about}</h3>
+            <h3>{this.state.landingContent.about}</h3>
           </TextContainer>
           <ThreeIconsMotto motto={this.state.landingContent.motto} />
-        </StyledHack>
+        </HackHero>
+      </Parallax>
      </Box>
     )
   }

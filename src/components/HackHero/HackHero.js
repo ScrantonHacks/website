@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
-
-import Layer from 'grommet/components/Layer';
-import Hero from 'grommet/components/Article';
-
+import Box from 'grommet/components/Box';
 import Granim from 'granim';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { Parallax, Background } from 'react-parallax';
 import styled from 'styled-components';
 
 import TypedTitle from '../TypedTitle';
+import ParallaxContainer from '../ParallaxContainer';
+import BackgroundParallaxVideo from '../BackgroundParallaxVideo';
 
+import ScrantonFlyoverVideo from '../../videos/scranton-flyover.mp4';
 
 /* Props
  * @chapter { integer }
  * @title { array[strings] }
  */
 
-const HeroHidden = styled(Hero)`
-	overflow: hidden !important;
-`;
-
 const Canvas = styled.canvas`
-	position: relative;
-	z-index: 0;
+	height: 100%;
 	width: 100%;
 `;
 
@@ -32,9 +26,9 @@ export default class HackHero extends Component {
 		this.state = {
 			chapter: props.chapter,
 			gradientBg: props.gradientBg,
-			windowWidth: 0,
-			windowHeight: 0,
 			style: props.style,
+			offset: props.offset,
+			scrantonVideo: props.scrantonVideo,
 		};
 		this.granimSettings = {
 			element: `#canvas-${props.chapter}`,
@@ -55,32 +49,9 @@ export default class HackHero extends Component {
 
 	componentDidMount() {
 		if(this.state.gradientBg) {
-			console.log(`Granim chapter: ${this.state.chapter}`);
 			new Granim(this.granimSettings);
 		}
-		if (typeof window !== 'undefined') {
-			window.addEventListener('resize', this.handleResize);
-		}
 	}
-
-	componentWillMount() {
-		if(typeof window !== 'undefined') {
-			this.setState({
-				windowWidth: window.innerWidth,
-				windowHeight: window.innerHeight
-			});
-			window.removeEventListener('resize', this.handleResize);
-		}
-	}
-
-	handleResize = () => {
-		if(typeof window !== 'undefined') {
-			this.setState({
-				windowWidth: window.innerWidth,
-				windowHeight: window.innerHeight,
-			});
-		}
-	};
 
 	getTitle() {
 		if(typeof this.props.title !== 'undefined' && this.props.title !== null) {
@@ -89,32 +60,34 @@ export default class HackHero extends Component {
 	};
 
 	render() {
+		if(this.state.gradientBg) {
+			return (
+				<ParallaxContainer 
+					background={Array(<Canvas id={`canvas-${this.state.chapter}`} />)} 
+					offset={this.state.offset}
+				>
+					{this.getTitle()}
+					{this.props.children}
+				</ParallaxContainer>
+			);
+		}
 		return (
-			<div style={this.state.style}>
-				{this.state.gradientBg ? 
-					<HeroHidden scrollStep selected = {this.state.chapter} >
-						<Parallax strength={1}>
-							<Background>
-								<Canvas 
-									id={`canvas-${this.state.chapter}`} 
-									style={{
-										width: this.state.windowWidth,
-										height: this.state.windowHeight
-									}}
-								/>
-							</Background> 
-							{this.getTitle()}
-							{this.props.children}
-							<div style={{height: this.state.windowWidth, width: '500px'}} />
-						</Parallax> 
-					</HeroHidden>
-					:
-					<HeroHidden scrollStep selected = {this.state.chapter} >
+			<Box full responsive size='full' textAlign='center'>
+				{this.state.scrantonVideo ? 
+          <BackgroundParallaxVideo 
+            videoSource = {ScrantonFlyoverVideo}
+            startTime = {12}
+          >
 						{this.getTitle()}
 						{this.props.children}
-					</HeroHidden>
+					</BackgroundParallaxVideo>
+				 : 
+				 <div>
+				 	{this.getTitle()}
+				 	{this.props.children}
+				 </div>
 				}
-			</div>
+			</Box>
 		);
 	}
 }

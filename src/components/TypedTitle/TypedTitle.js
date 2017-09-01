@@ -4,11 +4,11 @@ import Title from 'grommet/components/Title';
 
 import styled from 'styled-components';
 
-const StyledTitle = styled(Title)`
-  margin-left: 2em;
+const TextContainer = styled(Title)`
+  margin: auto;
   color: #ddd;
-  height: 5em;
-  margin-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 `;
 
 export default class TypedTitle extends Component {
@@ -38,15 +38,18 @@ export default class TypedTitle extends Component {
 
   render() {
     return (
-      <StyledTitle responsive>
-        <h1 style=
-          {{
-            whiteSpace: 'pre', 
-            textAlign: 'center', 
-            width: '100%' 
-          }}
-        ref={(el)=> {this.el = el}} />
-      </StyledTitle>
+      <TextContainer responsive>
+        <h1 
+          ref={(el)=> {this.el = el}} 
+          style=
+            {{
+              width: '100%',
+              margin: 'auto',
+              textAlign: 'center',
+              whiteSpace: 'pre'
+            }}
+        />
+      </TextContainer>
     );
   }
 }
