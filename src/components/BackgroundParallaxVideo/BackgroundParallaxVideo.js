@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Video from 'grommet/components/Video';
 import ParallaxContainer from '../ParallaxContainer';
+import Parallax from 'react-springy-parallax';
 
 export default class BackgroundParallaxVideo extends Component {
   
@@ -22,9 +23,9 @@ export default class BackgroundParallaxVideo extends Component {
     });
   }
 
-  getBackground() {
+  getVideoBackground() {
     return (
-      <Video align='top' autoPlay full loop muted fit='cover'
+      <Video autoPlay full loop muted fit='cover'
         showControls={false}
         style={{
           overflow: 'hidden'
@@ -37,10 +38,13 @@ export default class BackgroundParallaxVideo extends Component {
   
   render() {
     return (
-      <ParallaxContainer background = {Array(this.getBackground())}>
-        <Parallax bgStyle={{ backgroundColor: 'rgba(81,45,109,0.8)' }}>
+      <ParallaxContainer 
+        backgrounds = {
+          Array(
+            this.getVideoBackground(),
+            <Parallax.Layer style={{backgroundColor: 'rgba(81,45,109,0.8'}} />
+        )}>
           {this.props.children}
-        </Parallax>
       </ParallaxContainer>
     );
   }

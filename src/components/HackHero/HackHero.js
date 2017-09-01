@@ -63,7 +63,7 @@ export default class HackHero extends Component {
 		if(this.state.gradientBg) {
 			return (
 				<ParallaxContainer 
-					background={Array(<Canvas id={`canvas-${this.state.chapter}`} />)} 
+					backgrounds={Array(<Canvas id={`canvas-${this.state.chapter}`} />)} 
 					offset={this.state.offset}
 				>
 					{this.getTitle()}
