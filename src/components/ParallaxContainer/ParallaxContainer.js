@@ -7,6 +7,15 @@ const getBackgrounds = (backgrounds, offset) => {
   let key = 0;
   return backgrounds.map((background) => {
     key += 1;
+    if(background.color !== 'undefined') {
+      return (
+        <Parallax.Layer 
+          style={{backgroundColor: background.color}}
+          key={key}
+          offset={offset}
+        />
+      );
+    }
     return (
       <Parallax.Layer key={key} offset={offset}>
         {background}
@@ -16,9 +25,9 @@ const getBackgrounds = (backgrounds, offset) => {
 }
 
 export default ({children, backgrounds, offset}) =>
-  <Box full responsive size='full' textAlign='center'>
     <Parallax.Layer offset={offset} speed={0.5}>
       {getBackgrounds(backgrounds, offset)}
-      {children}
-    </Parallax.Layer> 
-  </Box>;
+      <Box full responsive size='full' textAlign='center'>
+        {children}
+      </Box>
+    </Parallax.Layer> ;

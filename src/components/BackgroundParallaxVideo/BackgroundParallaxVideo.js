@@ -42,8 +42,8 @@ export default class BackgroundParallaxVideo extends Component {
         backgrounds = {
           Array(
             this.getVideoBackground(),
-            <Parallax.Layer style={{backgroundColor: 'rgba(81,45,109,0.8'}} />
-        )}>
+            {color: 'rgba(81,45,109,0.8'},
+          )}>
           {this.props.children}
       </ParallaxContainer>
     );

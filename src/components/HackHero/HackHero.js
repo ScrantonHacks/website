@@ -31,7 +31,7 @@ export default class HackHero extends Component {
 			scrantonVideo: props.scrantonVideo,
 		};
 		this.granimSettings = {
-			element: `#canvas-${props.chapter}`,
+			element: `#canvas-${props.offset}`,
 			name: 'basic-gradient',
 			opacity: [1, 1],
 			isPausedWhenNotInView: true,
@@ -63,7 +63,7 @@ export default class HackHero extends Component {
 		if(this.state.gradientBg) {
 			return (
 				<ParallaxContainer 
-					backgrounds={Array(<Canvas id={`canvas-${this.state.chapter}`} />)} 
+					backgrounds={Array(<Canvas id={`canvas-${this.state.offset}`} />)} 
 					offset={this.state.offset}
 				>
 					{this.getTitle()}
