@@ -6,6 +6,9 @@ import styled from 'styled-components';
 
 const StyledTitle = styled(Title)`
   margin-left: 2em;
+  color: #ddd;
+  height: 5em;
+  margin-top: 1em;
 `;
 
 export default class TypedTitle extends Component {

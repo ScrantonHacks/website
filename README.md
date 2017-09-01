@@ -4,4 +4,5 @@ The Scranton Hacks Hackathon Website
 
 TODO:
 set up site metadata with React Helmet
+Encapsulate styled-components CSS
 

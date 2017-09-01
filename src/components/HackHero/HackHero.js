@@ -44,9 +44,9 @@ export default class HackHero extends Component {
 			states: {
 				"default-state": {
             gradients: [
-                ['#AA076B', '#61045F'],
-                ['#02AAB0', '#00CDAC'],
-                ['#DA22FF', '#9733EE']
+                ['#870053', '#61045F'],
+                ['#017175', '#00CDAC'],
+                ['#AC35C4', '#9733EE']
             ],
         },
 			},
@@ -104,8 +104,8 @@ export default class HackHero extends Component {
 								/>
 							</Background> 
 							{this.getTitle()}
-							<div style={{height: this.state.windowWidth, width: '500px'}} />
 							{this.props.children}
+							<div style={{height: this.state.windowWidth, width: '500px'}} />
 						</Parallax> 
 					</HeroHidden>
 					:
