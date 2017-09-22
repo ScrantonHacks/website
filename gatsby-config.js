@@ -16,9 +16,9 @@ module.exports = {
     landingContent: {
       about: "ScrantonHacks is a 24 Hour hackathon at the University of Scranton. We bring together students, regardless of background, to inspire and develop creative solutions to today's problems.",
       motto: {
-        build: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem neque, suscipit non porttitor non, ullamcorper imperdiet elit. Curabitur arcu tortor, scelerisque eget feugiat eget, dictum in nisl ",
-        connect: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem neque, suscipit non porttitor non, ullamcorper imperdiet elit. Curabitur arcu tortor, scelerisque eget feugiat eget, dictum in nisl",
-        learn: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem neque, suscipit non porttitor non, ullamcorper imperdiet elit. Curabitur arcu tortor, scelerisque eget feugiat eget, dictum in nisl",
+        build: "Our philosophy is centered in using our technical skills to build solutions to the problems facing society.",
+        connect: "Connect with the other leaders in your field - expand your perspectives, broaden your horizons, and build lasting networks.",
+        learn: "Our main mission is to facilitate the education of today's up-and-coming hackers, programmers, and everybody who makes our world work. We have a very real hope that we might be able to introduce our members and the attendees of our hackathons to things they've never seen before and empower them to hack the world.", 
       },
       //logos and stuff go here
       sponsors: {
