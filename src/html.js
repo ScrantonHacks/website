@@ -38,6 +38,7 @@ export default class HTML extends React.Component {
     return (
       <html lang="en">
         <head>
+          <meta name="google-site-verification" content="pFNVmrY6yzJoP4PxkUqI7y_Fp2sq0hQIrfqge8h6Ln8" />
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
