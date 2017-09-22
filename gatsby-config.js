@@ -10,7 +10,7 @@ module.exports = {
     hackathonLocation: 'University of Scranton Byron',
     social: {
       facebook_link: 'https://www.facebook.com/groups/397712937282963/',
-      twitter_link: 'https://twitter.com',
+      twitter_link: 'https://twitter.com/HacksScranton',
       instagram_link: 'https://www.instagram.com/scranton_hacks/',
     },
     landingContent: {
