@@ -47,6 +47,7 @@ export default class Index extends Component {
             <H3>{this.state.landingContent.about}</H3>
           </TextContainer>
           <ThreeIconsMotto motto={this.state.landingContent.motto} />
+          <TeamPage />
         </HackHero>
       </div>
     );
