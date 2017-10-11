@@ -13,75 +13,95 @@ import Parallax from 'react-springy-parallax';
 import styled from 'styled-components';
 
 const TextContainer = styled.div`
-  width: 45%;
-  margin:auto;
-  color: #ddd;
+width: 45%;
+margin:auto;
+color: #ddd;
 `;
 
 const H3 = styled.h3`
-  font-size: 2em;
+font-size: 2em;
 `;
 
 export default class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      siteMetadata: props.data.site.siteMetadata,
-      landingContent: props.data.site.siteMetadata.landingContent,
+    constructor(props) {
+        super(props);
+        this.state = {
+            siteMetadata: props.data.site.siteMetadata,
+            landingContent: props.data.site.siteMetadata.landingContent,
+        }
     }
-  }
 
-  render() {
-    return (
-      <div>
-      	<HackHero offset={0} scrantonVideo>
-          <div className="text-center text-white">
+    render() {
+        return (
+            <div>
+            <HackHero offset={0} scrantonVideo>
+            <div className="text-center text-white">
             <ScrantonHacksLogo />
             <SubscribeSplash title={this.state.siteMetadata.title} />
             <SponsorCrumb data={this.state.siteMetadata} />
-          </div>
-      	</HackHero>
-        <HackHero offset={1} title={[
-          "echo '#! /bin/ScrantonHacks' > about.sh",
-          "About Us"]} gradientBg>
-          <TextContainer>
+            </div>
+            </HackHero>
+            <HackHero offset={1} title={[
+                "echo '#! /bin/ScrantonHacks' > about.sh",
+                "About Us"]} gradientBg>
+            <TextContainer>
             <H3>{this.state.landingContent.about}</H3>
-          </TextContainer>
-          <ThreeIconsMotto motto={this.state.landingContent.motto} />
-          <TeamPage team={this.state.landingContent.team} />
-        </HackHero>
-      </div>
-    );
-  }
+            </TextContainer>
+            <ThreeIconsMotto motto={this.state.landingContent.motto} />
+            <TeamPage team={this.state.landingContent.team} />
+            </HackHero>
+            </div>
+        );
+    }
 }
 
 export const query = graphql`
-  query IndexQuery {
+query IndexQuery {
     site {
-      siteMetadata {
-        sponsorEmail
-        title
-        social {
-          facebook_link
-          twitter_link
-          instagram_link
+        siteMetadata {
+            sponsorEmail
+            title
+            social {
+                facebook_link
+                twitter_link
+                instagram_link
+            }
+            landingContent {
+                about
+                motto {
+                    build
+                    connect
+                    learn
+                }
+                team {
+                    andrew {
+                        image
+                        name
+                        title
+                    }
+                    regita {
+                        image
+                        name
+                        title
+                    }
+                    peter {
+                        image
+                        name
+                        title
+                    }
+                    clarence {
+                        image
+                        name
+                        title
+                    }
+                    sean {
+                        image
+                        name
+                        title
+                    }
+                }
+            }
         }
-        landingContent {
-          about
-          motto {
-            build
-            connect
-            learn
-          }
-          team {
-              andrew {
-                  image
-                  name
-                  title
-              }
-          }
-        }
-      }
     }
-  }
+}
 `;
