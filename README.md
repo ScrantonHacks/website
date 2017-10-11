@@ -17,4 +17,4 @@ Get Development environment up and running:
   - (optional) install Gatsby globally with `npm install -g gatsby`
   - MacOSX + Linux Helpful Tools: https://github.com/creationix/nvm
     - I recommend to install `nvm` for managing node and npm versions, but as long as you have version v8+ or v5.3.0+ it should be OK
-  - 
+  - something something test  
