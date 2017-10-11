@@ -1,72 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
+import DeployIcon from 'grommet/components/icons/base/Deploy';
+import SyncIcon from 'grommet/components/icons/base/Sync';
+import TechnologyIcon from 'grommet/components/icons/base/Technology';
+import Columns from 'grommet/components/Columns';
+import Box from 'grommet/components/Box';
 
-const Canvas = styled.canvas`
-    height: 100%;
-    width: 100%;
+import styled from 'styled-components';
+
+const StyledDeploy = styled(DeployIcon)`
+  stroke: #c3c3c3 !important;
+  fill: #c3c3c3 !important;
 `;
 
-export default class TeamPage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            chapter: props.chapter,
-            gradientBg: props.gradientBg,
-            style: props.style,
-            offset: props.offset,
-        };
-        this.granimSettings = {
-			element: `#canvas-${props.offset}`,
-			name: 'basic-gradient',
-			opacity: [1, 1],
-			isPausedWhenNotInView: true,
-			states: {
-				"default-state": {
-            gradients: [
-                ['#870053', '#61045F'],
-                ['#017175', '#00CDAC'],
-                ['#AC35C4', '#9733EE']
-            ],
-        },
-			},
-		};
-    }
-    componentDidMount() {
-		if(this.state.gradientBg) {
-			new Granim(this.granimSettings);
-		}
-	}
+const StyledSync = styled(SyncIcon)`
+  stroke: #c3c3c3 !important;
+  fill: #c3c3c3 !important;
+`;
 
-	getTitle() {
-		if(typeof this.props.title !== 'undefined' && this.props.title !== null) {
-			return (<TypedTitle strings={this.props.title} />);
-		}
-	};
+const StyledTechnology = styled(TechnologyIcon)`
+  stroke: #c3c3c3 !important;
+  fill: #c3c3c3 !important;
+`;
 
-	getGradientBg() {
-		return (
-			<div style={{ height: '100%', width: '100%'}}>
-				<Canvas id={`canvas-${this.state.offset}`} />
-			</div>
-		);
-	}
+const TextContainer = styled.div`
+  width: 100%;
+  margin:auto;
+  color: #dddccc;
+  margin-top: 2em;
+`;
+const MemberName = styled.h2`
+  font-size: 2em !important;
+`;
+const MemberTitle = styled.h4`
+  font-size: 1.4em !important;
+`;
 
-	render() {
-		if(this.state.gradientBg) {
-			return (
-				<ParallaxContainer
-					backgrounds={Array(this.getGradientBg())}
-					offset={this.state.offset}
-				>
-					<TypedTitle strings={this.props.title} />
-					{this.props.children}
-				</ParallaxContainer>
-			);
-		}
-		return(
-			<div>
-				{this.getTitle()}
-				{this.props.children}
-			</div>
-		);
-	}
-}
+export default ({team}) =>
+  <Columns justify="center" responsive size='medium'>
+    <Box align="center" pad="none" margin="none" direction="column">
+      <StyledDeploy size='large'/>
+      <TextContainer>
+        <MemberName>{team.andrew.name}</MemberName>
+        <MemberTitle>{team.andrew.title}</MemberTitle>
+      </TextContainer>
+    </Box>
+  </Columns>
+;

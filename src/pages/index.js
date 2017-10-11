@@ -7,6 +7,7 @@ import SubscribeSplash from '../components/SubscribeSplash';
 import SponsorCrumb from '../components/SponsorCrumb';
 import ScrantonHacksLogo from '../components/ScrantonHacksLogo';
 import ThreeIconsMotto from '../components/ThreeIconsMotto';
+import TeamPage from '../components/TeamPage';
 import Parallax from 'react-springy-parallax';
 
 import styled from 'styled-components';
@@ -47,7 +48,7 @@ export default class Index extends Component {
             <H3>{this.state.landingContent.about}</H3>
           </TextContainer>
           <ThreeIconsMotto motto={this.state.landingContent.motto} />
-          <TeamPage />
+          <TeamPage team={this.state.landingContent.team} />
         </HackHero>
       </div>
     );
@@ -71,6 +72,13 @@ export const query = graphql`
             build
             connect
             learn
+          }
+          team {
+              andrew {
+                  image
+                  name
+                  title
+              }
           }
         }
       }
