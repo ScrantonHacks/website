@@ -7,21 +7,6 @@ import Box from 'grommet/components/Box';
 
 import styled from 'styled-components';
 
-const StyledDeploy = styled(DeployIcon)`
-stroke: #c3c3c3 !important;
-fill: #c3c3c3 !important;
-`;
-
-const StyledSync = styled(SyncIcon)`
-stroke: #c3c3c3 !important;
-fill: #c3c3c3 !important;
-`;
-
-const StyledTechnology = styled(TechnologyIcon)`
-stroke: #c3c3c3 !important;
-fill: #c3c3c3 !important;
-`;
-
 const TextContainer = styled.div`
 width: 100%;
 margin:auto;
@@ -36,11 +21,18 @@ font-size: 1.4em !important;
 `;
 
 export default ({team}) =>
+
     <Columns justify="center" responsive size='medium'>
         <Box align="center" pad="none" margin="none" direction="column">
             <TextContainer>
                 <MemberName>{team.andrew.name}</MemberName>
                 <MemberTitle>{team.andrew.title}</MemberTitle>
+            </TextContainer>
+        </Box>
+        <Box align="center" pad="none" margin="none" direction="column">
+            <TextContainer>
+                <MemberName>{team.john.name}</MemberName>
+                <MemberTitle>{team.john.title}</MemberTitle>
             </TextContainer>
         </Box>
         <Box align="center" pad="none" margin="none" direction="column">
@@ -59,6 +51,18 @@ export default ({team}) =>
             <TextContainer>
                 <MemberName>{team.clarence.name}</MemberName>
                 <MemberTitle>{team.clarence.title}</MemberTitle>
+            </TextContainer>
+        </Box>
+        <Box align="center" pad="none" margin="none" direction="column">
+            <TextContainer>
+                <MemberName>{team.brian.name}</MemberName>
+                <MemberTitle>{team.brian.title}</MemberTitle>
+            </TextContainer>
+        </Box>
+        <Box align="center" pad="none" margin="none" direction="column">
+            <TextContainer>
+                <MemberName>{team.liam.name}</MemberName>
+                <MemberTitle>{team.liam.title}</MemberTitle>
             </TextContainer>
         </Box>
         <Box align="center" pad="none" margin="none" direction="column">

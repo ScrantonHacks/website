@@ -48,6 +48,9 @@ export default class Index extends Component {
             <H3>{this.state.landingContent.about}</H3>
             </TextContainer>
             <ThreeIconsMotto motto={this.state.landingContent.motto} />
+            <TextContainer>
+            <H3>{this.state.landingContent.meetTeam}</H3>
+            </TextContainer>
             <TeamPage team={this.state.landingContent.team} />
             </HackHero>
             </div>
@@ -68,6 +71,7 @@ query IndexQuery {
             }
             landingContent {
                 about
+                meetTeam
                 motto {
                     build
                     connect
@@ -95,6 +99,21 @@ query IndexQuery {
                         title
                     }
                     sean {
+                        image
+                        name
+                        title
+                    }
+                    john {
+                        image
+                        name
+                        title
+                    }
+                    brian {
+                        image
+                        name
+                        title
+                    }
+                    liam {
                         image
                         name
                         title

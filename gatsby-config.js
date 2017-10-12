@@ -15,6 +15,7 @@ module.exports = {
         },
         landingContent: {
             about: "ScrantonHacks is a 24 Hour hackathon at the University of Scranton. We bring together students, regardless of background, to inspire and develop creative solutions to today's problems.",
+            meetTeam: "Meet the ScrantonHacks Organization Team",
             motto: {
                 build: "We believe in using our technical skill to build world-class solutions to the problems facing society today.",
                 connect: "Connect with the other leaders in your field - expand your perspectives, broaden your horizons, and build lasting networks.",
@@ -28,23 +29,38 @@ module.exports = {
                 },
                 regita: {
                     image: '',
-                    name: '',
-                    title: '',
+                    name: 'Regita Handijaya',
+                    title: 'Criminal Mastermind',
                 },
                 peter: {
                     image: '',
-                    name: '',
-                    title: '',
+                    name: 'Peter Zabiegala',
+                    title: 'Ruthless Corporate Director',
                 },
                 clarence: {
                     image: '',
                     name: 'Clarence Gallagher',
-                    title: 'Does Stuff',
+                    title: 'Dark Master of All',
                 },
                 sean: {
                     image: '',
                     name: 'Sean Batzel',
-                    title: 'Web Development'
+                    title: 'Website Defacer',
+                },
+                john: {
+                    image: '',
+                    name: 'John Prendergast',
+                    title: 'Designated Director of Festivities',
+                },
+                brian: {
+                    image: '',
+                    name: 'Brian Dauer',
+                    title: 'Supervillain Extraordinaire',
+                },
+                liam: {
+                    image: '',
+                    name: 'Liam O\'Hare',
+                    title: 'Master Evil Genius',
                 },
             },
             //logos and stuff go here
