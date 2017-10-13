@@ -19,7 +19,7 @@ module.exports = {
             motto: {
                 build: "We believe in using our technical skill to build world-class solutions to the problems facing society today.",
                 connect: "Connect with the other leaders in your field - expand your perspectives, broaden your horizons, and build lasting networks.",
-                learn: "We exist to the compliment the knowledge and empower todays up-and-coming hackers.",
+                learn: "We exist to the complement the knowledge and empower todays up-and-coming hackers.",
             },
             team: {
                 andrew: {
