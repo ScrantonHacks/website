@@ -22,6 +22,10 @@ const H3 = styled.h3`
 font-size: 2em;
 `;
 
+const H2 = styled.h2`
+font-size: 2em;
+`;
+
 export default class Index extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +53,7 @@ export default class Index extends Component {
             </TextContainer>
             <ThreeIconsMotto motto={this.state.landingContent.motto} />
             <TextContainer>
-            <H3>{this.state.landingContent.meetTeam}</H3>
+            <H2>{this.state.landingContent.meetTeam}</H2>
             </TextContainer>
             <TeamPage team={this.state.landingContent.team} />
             </HackHero>
