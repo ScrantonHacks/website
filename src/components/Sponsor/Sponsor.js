@@ -12,8 +12,7 @@ export default class Sponsor extends Component {
         return (
             <Image src={props.icon}
                    size={props.size}
-                   caption="true"
-                   alt={props.name} />
+                   name={props.name} />
         );
     }
 }
