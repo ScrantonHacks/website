@@ -8,6 +8,7 @@ import SponsorCrumb from '../components/SponsorCrumb';
 import ScrantonHacksLogo from '../components/ScrantonHacksLogo';
 import ThreeIconsMotto from '../components/ThreeIconsMotto';
 import TeamPage from '../components/TeamPage';
+import SponsorList from '../components/SponsorList';
 import Parallax from 'react-springy-parallax';
 
 import styled from 'styled-components';
@@ -38,6 +39,7 @@ export default class Index extends Component {
   render() {
       return (
         <div>
+
           <HackHero offset={0} scrantonVideo>
             <div className="text-center text-white">
               <ScrantonHacksLogo />
@@ -45,6 +47,7 @@ export default class Index extends Component {
               <SponsorCrumb data={this.state.siteMetadata} />
             </div>
           </HackHero>
+
           <HackHero offset={1} title={[
               "echo '#! /bin/ScrantonHacks' > about.sh",
               "About Us"]} gradientBg>
@@ -53,8 +56,15 @@ export default class Index extends Component {
             </TextContainer>
             <ThreeIconsMotto motto={this.state.landingContent.motto} />
           </HackHero>
+
           <HackHero offset={2} title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]} gradientBg>
             <TeamPage team={this.state.landingContent.team} />
+          </HackHero>
+
+          <HackHero offset={3} title={[
+            "echo '#! /bin/ScrantonHacks' > sponsors.sh",
+            "Our Sponsors"]} gradientBg>
+            <SponsorList sponsors={this.state.landingContent.sponsors} />
           </HackHero>
         </div>
       );
@@ -74,7 +84,6 @@ query IndexQuery {
             }
             landingContent {
                 about
-                meetTeam
                 motto {
                     build
                     connect
@@ -84,6 +93,10 @@ query IndexQuery {
                   image
                   name
                   title
+                }
+                sponsors {
+                  logo
+                  tier
                 }
             }
         }
