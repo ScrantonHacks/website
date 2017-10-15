@@ -1,1 +1,1 @@
-export { default } from './SponsorList.js';
+export { default } from './SponsorsList.js';
