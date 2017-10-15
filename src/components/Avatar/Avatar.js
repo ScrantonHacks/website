@@ -3,10 +3,13 @@ import styled from 'styled-components';
 
 const AvatarContainer = styled.a`
   position: relative;
-  width: 55%;
+  width: 12em;
   &:hover ${Overlay} & {
     opacity: 1; 
   }
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
 `;
 
 const Image = styled.img`
