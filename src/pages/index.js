@@ -8,8 +8,10 @@ import SponsorCrumb from '../components/SponsorCrumb';
 import ScrantonHacksLogo from '../components/ScrantonHacksLogo';
 import ThreeIconsMotto from '../components/ThreeIconsMotto';
 import Parallax from 'react-springy-parallax';
+import Footer from '../components/Footer';
 
 import styled from 'styled-components';
+
 
 const TextContainer = styled.div`
   width: 45%;
@@ -47,6 +49,7 @@ export default class Index extends Component {
             <H3>{this.state.landingContent.about}</H3>
           </TextContainer>
           <ThreeIconsMotto motto={this.state.landingContent.motto} />
+          <Footer data={this.state.siteMetadata}/>
         </HackHero>
       </div>
     );
