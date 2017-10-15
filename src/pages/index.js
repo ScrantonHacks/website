@@ -8,6 +8,7 @@ import SponsorCrumb from '../components/SponsorCrumb';
 import ScrantonHacksLogo from '../components/ScrantonHacksLogo';
 import ThreeIconsMotto from '../components/ThreeIconsMotto';
 import TeamPage from '../components/TeamPage';
+import SponsorsList from '../components/SponsorsList';
 import Parallax from 'react-springy-parallax';
 
 import styled from 'styled-components';
@@ -56,6 +57,11 @@ export default class Index extends Component {
             <H2>{this.state.landingContent.meetTeam}</H2>
             </TextContainer>
             <TeamPage team={this.state.landingContent.team} />
+            </HackHero>
+            <HackHero offset={3} title={[
+                "echo '#! /bin/ScrantonHacks' > sponsors.sh",
+                "Sponsors"]} gradientBg>
+            <SponsorsList sponsors={this.state.landingContent.sponsors} />
             </HackHero>
             </div>
         );

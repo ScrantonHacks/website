@@ -1,18 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Image from 'grommet/components/Image';
 
 export default class Sponsor extends Component {
     constructor(props) {
         super(props);
-        this.state {
+        this.state = {
+            size: props.size,
+            name: props.name,
         };
     }
 
     render() {
         return (
-            <Image src={props.icon}
-                   size={props.size}
-                   name={props.name} />
+            <Image size={this.state.size}
+                   name={this.state.name} />
         );
     }
 }
