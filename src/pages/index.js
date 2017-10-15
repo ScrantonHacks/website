@@ -36,25 +36,27 @@ export default class Index extends Component {
         }
     }
 
-    render() {
-        return (
-            <div>
-            <HackHero offset={0} scrantonVideo>
+  render() {
+      return (
+        <div>
+          <HackHero offset={0} scrantonVideo>
             <div className="text-center text-white">
-            <ScrantonHacksLogo />
-            <SubscribeSplash title={this.state.siteMetadata.title} />
-            <SponsorCrumb data={this.state.siteMetadata} />
+              <ScrantonHacksLogo />
+              <SubscribeSplash title={this.state.siteMetadata.title} />
+              <SponsorCrumb data={this.state.siteMetadata} />
             </div>
-            </HackHero>
-            <HackHero offset={1} title={[
-                "echo '#! /bin/ScrantonHacks' > about.sh",
-                "About Us"]} gradientBg>
+          </HackHero>
+          <HackHero offset={1} title={[
+              "echo '#! /bin/ScrantonHacks' > about.sh",
+              "About Us"]} gradientBg>
             <TextContainer>
-            <H3>{this.state.landingContent.about}</H3>
+              <H3>{this.state.landingContent.about}</H3>
             </TextContainer>
             <ThreeIconsMotto motto={this.state.landingContent.motto} />
+          </HackHero>
+          <HackHero offset={2} title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]} gradientBg>
             <TextContainer>
-            <H2>{this.state.landingContent.meetTeam}</H2>
+              <H3>{this.state.landingContent.meetTeam}</H3>
             </TextContainer>
             <TeamPage team={this.state.landingContent.team} />
             </HackHero>
@@ -64,7 +66,7 @@ export default class Index extends Component {
             <SponsorsList sponsors={this.state.landingContent.sponsors} />
             </HackHero>
             </div>
-        );
+      );
     }
 }
 
@@ -88,46 +90,9 @@ query IndexQuery {
                     learn
                 }
                 team {
-                    andrew {
-                        image
-                        name
-                        title
-                    }
-                    regita {
-                        image
-                        name
-                        title
-                    }
-                    peter {
-                        image
-                        name
-                        title
-                    }
-                    clarence {
-                        image
-                        name
-                        title
-                    }
-                    sean {
-                        image
-                        name
-                        title
-                    }
-                    john {
-                        image
-                        name
-                        title
-                    }
-                    brian {
-                        image
-                        name
-                        title
-                    }
-                    liam {
-                        image
-                        name
-                        title
-                    }
+                  image
+                  name
+                  title
                 }
             }
         }

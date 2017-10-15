@@ -21,48 +21,48 @@ module.exports = {
                 connect: "Connect with the other leaders in your field - expand your perspectives, broaden your horizons, and build lasting networks.",
                 learn: "We exist to the complement the knowledge and empower todays up-and-coming hackers.",
             },
-            team: {
-                andrew: {
+            team: [
+                {
                     image: '',
                     name: 'Andrew Plaza',
                     title: 'Benevolent Dictator for Life',
                 },
-                regita: {
+                {
                     image: '',
                     name: 'Regita Handijaya',
                     title: 'Criminal Mastermind',
                 },
-                peter: {
+                {
                     image: '',
                     name: 'Peter Zabiegala',
                     title: 'Ruthless Corporate Director',
                 },
-                clarence: {
+                {
                     image: '',
                     name: 'Clarence Gallagher',
                     title: 'Dark Master of All',
                 },
-                sean: {
+                {
                     image: '',
                     name: 'Sean Batzel',
                     title: 'Website Defacer',
                 },
-                john: {
+                {
                     image: '',
                     name: 'John Prendergast',
                     title: 'Designated Director of Festivities',
                 },
-                brian: {
+                {
                     image: '',
                     name: 'Brian Dauer',
                     title: 'Supervillain Extraordinaire',
                 },
-                liam: {
+                {
                     image: '',
                     name: 'Liam O\'Hare',
                     title: 'Master Evil Genius',
                 },
-            },
+            ],
             //logos and stuff go here
             sponsors: {
                 platinum: {
