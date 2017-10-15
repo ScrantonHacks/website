@@ -1,11 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Avatar from 'react-avatar';
 
-export default ({source}, {size}, {name}) => {
-            console.log({source});
-            console.log({size});
-            console.log({name});
-            return (<Avatar src={source}
-                   size={size}
-                   name={name} />);
-}
+export default ({source_p}, {size_p}, {name_p}) =>
+            <Avatar src={source_p}
+                   size={size_p}
+                   name={name_p} />;
