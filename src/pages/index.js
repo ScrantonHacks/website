@@ -63,7 +63,7 @@ export default class Index extends Component {
             <HackHero offset={3} title={[
                 "echo '#! /bin/ScrantonHacks' > sponsors.sh",
                 "Sponsors"]} gradientBg>
-            <SponsorsList sponsors={this.state.landingContent.sponsors} />
+            <SponsorsList />
             </HackHero>
             </div>
       );
