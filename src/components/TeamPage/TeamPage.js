@@ -19,9 +19,7 @@ const getTeam = (team) => {
   return team.map( (member) => {
     key += 1;
     return (
-      <Box align="center" pad="none" margin={{right:"none", left: "none", bottom: "large"}} direction="column" key={key} responsive focusable>
-        <Avatar name={member.name} img={__PATH_PREFIX__ + member.image} link="http://twitter.com" title={member.title} />
-      </Box>
+      <Avatar name={member.name} img={__PATH_PREFIX__ + member.image} link="http://twitter.com" title={member.title} />
     );
   });
 }
