@@ -25,6 +25,7 @@ font-size: 1.4em !important;
 const getTeam = (team) => {
   let key = 0;
   return team.map( (member) => {
+    key += 1;
     return (
       <Box align="center" pad="none" margin="none" direction="column" key={key}>
         <TextContainer>
@@ -35,7 +36,6 @@ const getTeam = (team) => {
       </Box>
     );
   });
-  key += 1;
 }
 
 
