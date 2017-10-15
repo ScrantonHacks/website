@@ -69,15 +69,15 @@ module.exports = {
       ],
         //logos and stuff go here
         sponsors: [
-          facebook_example: {
+          { // Facebook
             logo: "/headshots/andrew_plaza.jpeg", // path of the logo
             tier: 1,
           },
-          google_example: {
+          { // Google
             logo: "/headshots/andrew_plaza.jpeg",
             tier: 2,
           },
-          baidu_example: {
+          { // Baidu
             logo: "/headshots/andrew_plaza.jpeg",
             tier: 3,
           }
