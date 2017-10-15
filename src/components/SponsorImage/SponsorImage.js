@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import Image from 'grommet/components/Image';
 
-const SponsorImage = ({image}, {tier}) => {
+
+const SponsorImage = ({logo, tier}) => {
+  console.log(logo);
   if(tier === 3) {
-    return <Image src={image} size="small" />
+    return <Image src={logo} size="small" />;
   }
   else if (tier === 2) {
-    return <Image src={image} size="medium" />
+    return <Image src={logo} size="medium" />;
   }
   else if (tier === 1) {
-    return <Image src={image} size="large" />
+    return <Image src={logo} size="large" />;
   }
 }
 
@@ -25,6 +26,7 @@ SponsorImage.defaultProps = {
   tier: 3,
 }
 
+export default SponsorImage;
 
   
 

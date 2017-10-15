@@ -28,78 +28,77 @@ font-size: 2em;
 `;
 
 export default class Index extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            siteMetadata: props.data.site.siteMetadata,
-            landingContent: props.data.site.siteMetadata.landingContent,
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      siteMetadata: props.data.site.siteMetadata,
+      landingContent: props.data.site.siteMetadata.landingContent,
     }
+  }
 
   render() {
-      return (
-        <div>
+    return (
+      <div>
+        <HackHero offset={0} scrantonVideo>
+          <div className="text-center text-white">
+            <ScrantonHacksLogo />
+            <SubscribeSplash title={this.state.siteMetadata.title} />
+            <SponsorCrumb data={this.state.siteMetadata} />
+          </div>
+        </HackHero>
 
-          <HackHero offset={0} scrantonVideo>
-            <div className="text-center text-white">
-              <ScrantonHacksLogo />
-              <SubscribeSplash title={this.state.siteMetadata.title} />
-              <SponsorCrumb data={this.state.siteMetadata} />
-            </div>
-          </HackHero>
+        <HackHero offset={1} title={[
+            "echo '#! /bin/ScrantonHacks' > about.sh",
+            "About Us"]} gradientBg>
+          <TextContainer>
+            <H3>{this.state.landingContent.about}</H3>
+          </TextContainer>
+          <ThreeIconsMotto motto={this.state.landingContent.motto} />
+        </HackHero>
 
-          <HackHero offset={1} title={[
-              "echo '#! /bin/ScrantonHacks' > about.sh",
-              "About Us"]} gradientBg>
-            <TextContainer>
-              <H3>{this.state.landingContent.about}</H3>
-            </TextContainer>
-            <ThreeIconsMotto motto={this.state.landingContent.motto} />
-          </HackHero>
+        <HackHero offset={2} title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]} gradientBg>
+          <TeamPage team={this.state.landingContent.team} />
+        </HackHero>
 
-          <HackHero offset={2} title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]} gradientBg>
-            <TeamPage team={this.state.landingContent.team} />
-          </HackHero>
-
-          <HackHero offset={3} title={[
-            "echo '#! /bin/ScrantonHacks' > sponsors.sh",
-            "Our Sponsors"]} gradientBg>
-            <SponsorList sponsors={this.state.landingContent.sponsors} />
-          </HackHero>
-        </div>
-      );
-    }
+        <HackHero offset={3} title={[
+          "echo '#! /bin/ScrantonHacks' > sponsors.sh",
+          "Our Sponsors"]} gradientBg>
+          <SponsorList sponsors={this.state.landingContent.sponsors} />
+        </HackHero>
+      </div>
+    );
+  }
 }
 
 export const query = graphql`
 query IndexQuery {
-    site {
-        siteMetadata {
-            sponsorEmail
-            title
-            social {
-                facebook_link
-                twitter_link
-                instagram_link
-            }
-            landingContent {
-                about
-                motto {
-                    build
-                    connect
-                    learn
-                }
-                team {
-                  image
-                  name
-                  title
-                }
-                sponsors {
-                  logo
-                  tier
-                }
-            }
+  site {
+    siteMetadata {
+      sponsorEmail
+      title
+      social {
+        facebook_link
+        twitter_link
+        instagram_link
+      }
+      landingContent {
+        about
+        motto {
+          build
+          connect
+          learn
         }
+        team {
+          image
+          name
+          title
+        }
+        sponsors {
+          logo
+          tier
+        }
+      }
     }
+  }
 }
 `;
