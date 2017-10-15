@@ -22,64 +22,28 @@ const MemberTitle = styled.h4`
 font-size: 1.4em !important;
 `;
 
-export default ({team}) =>
+const getTeam = (team) => {
+  let key = 0;
+  return team.map( (member) => {
+    return (
+      <Box align="center" pad="none" margin="none" direction="column" key={key}>
+        <TextContainer>
+          <TeamImage name={member.name}/>
+          <MemberName>{member.name}</MemberName>
+          <MemberTitle>{member.title}</MemberTitle>
+        </TextContainer>
+      </Box>
+    );
+  });
+  key += 1;
+}
 
-    <Columns justify="center" responsive size='medium'>
-        <Box align="center" pad="none" margin="none" direction="column">
-            <TextContainer>
-                <TeamImage name={team.andrew.name}/>
-                <MemberName>{team.andrew.name}</MemberName>
-                <MemberTitle>{team.andrew.title}</MemberTitle>
-            </TextContainer>
-        </Box>
-        <Box align="center" pad="none" margin="none" direction="column">
-            <TextContainer>
-                <TeamImage name={team.john.name}/>
-                <MemberName>{team.john.name}</MemberName>
-                <MemberTitle>{team.john.title}</MemberTitle>
-            </TextContainer>
-        </Box>
-        <Box align="center" pad="none" margin="none" direction="column">
-            <TextContainer>
-                <TeamImage name={team.regita.name}/>
-                <MemberName>{team.regita.name}</MemberName>
-                <MemberTitle>{team.regita.title}</MemberTitle>
-            </TextContainer>
-        </Box>
-        <Box align="center" pad="none" margin="none" direction="column">
-            <TextContainer>
-                <TeamImage name={team.peter.name}/>
-                <MemberName>{team.peter.name}</MemberName>
-                <MemberTitle>{team.peter.title}</MemberTitle>
-            </TextContainer>
-        </Box>
-        <Box align="center" pad="none" margin="none" direction="column">
-            <TextContainer>
-                <TeamImage name={team.clarence.name}/>
-                <MemberName>{team.clarence.name}</MemberName>
-                <MemberTitle>{team.clarence.title}</MemberTitle>
-            </TextContainer>
-        </Box>
-        <Box align="center" pad="none" margin="none" direction="column">
-            <TextContainer>
-                <TeamImage name={team.brian.name}/>
-                <MemberName>{team.brian.name}</MemberName>
-                <MemberTitle>{team.brian.title}</MemberTitle>
-            </TextContainer>
-        </Box>
-        <Box align="center" pad="none" margin="none" direction="column">
-            <TextContainer>
-                <TeamImage name={team.liam.name}/>
-                <MemberName>{team.liam.name}</MemberName>
-                <MemberTitle>{team.liam.title}</MemberTitle>
-            </TextContainer>
-        </Box>
-        <Box align="center" pad="none" margin="none" direction="column">
-            <TextContainer>
-                <TeamImage name={team.sean.name}/>
-                <MemberName>{team.sean.name}</MemberName>
-                <MemberTitle>{team.sean.title}</MemberTitle>
-            </TextContainer>
-        </Box>
-        </Columns>
-        ;
+
+export default ({team}) => {
+  console.log(team);
+  return (
+    <Columns justify="center" responsive size='medium' >
+      {getTeam(team)}
+    </Columns>
+  );
+}
