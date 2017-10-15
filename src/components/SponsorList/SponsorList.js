@@ -1,8 +1,17 @@
 import React from 'react';
 import SponsorImage from '../SponsorImage';
 
-export default () => {
-
+const getSponsors = (sponsorArray) => {
+  return sponsorArray.map((sponsor)=>{
+    
+  });
 }
+export default ({sponsorArray}) => {
+  return (
+    <Columns>
+    </Columns>
+  )
+}
+
 
 
