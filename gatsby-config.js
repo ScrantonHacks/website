@@ -23,42 +23,47 @@ module.exports = {
             },
             team: [
                 {
-                    image: '',
+                    image: '/headshots/andrew_plaza.jpeg',
                     name: 'Andrew Plaza',
                     title: 'Benevolent Dictator for Life',
                 },
                 {
-                    image: '',
-                    name: 'Regita Handijaya',
-                    title: 'Criminal Mastermind',
-                },
-                {
-                    image: '',
-                    name: 'Peter Zabiegala',
-                    title: 'Ruthless Corporate Director',
-                },
-                {
-                    image: '',
-                    name: 'Clarence Gallagher',
-                    title: 'Dark Master of All',
-                },
-                {
-                    image: '',
-                    name: 'Sean Batzel',
-                    title: 'Website Defacer',
-                },
-                {
-                    image: '',
+                    image: '/headshots/andrew_plaza.jpeg',
                     name: 'John Prendergast',
                     title: 'Designated Director of Festivities',
                 },
                 {
-                    image: '',
+                    image: '/headshots/andrew_plaza.jpeg',
+                    name: 'Regita Handijaya',
+                    title: 'Criminal Mastermind',
+                },
+                {
+                    image: '/headshots/andrew_plaza.jpeg',
+                    name: 'Alex Thoennes',
+                    title: 'Observer of all Things',
+                },
+                {
+                    image: '/headshots/andrew_plaza.jpeg',
+                    name: 'Peter Zabiegala',
+                    title: 'Ruthless Corporate Director',
+                },
+                {
+                    image: '/headshots/andrew_plaza.jpeg',
+                    name: 'Clarence Gallagher',
+                    title: 'Dark Master of All',
+                },
+                {
+                    image: '/headshots/andrew_plaza.jpeg',
+                    name: 'Sean Batzel',
+                    title: 'Website Defacer',
+                },
+                {
+                    image: '/headshots/andrew_plaza.jpeg',
                     name: 'Brian Dauer',
                     title: 'Supervillain Extraordinaire',
                 },
                 {
-                    image: '',
+                    image: '/headshots/andrew_plaza.jpeg',
                     name: 'Liam O\'Hare',
                     title: 'Master Evil Genius',
                 },
