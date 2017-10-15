@@ -68,12 +68,20 @@ module.exports = {
         },
       ],
         //logos and stuff go here
-        sponsors: {
+        sponsors: [
           facebook_example: {
-
-              logo: "", // path of the logo
+            logo: "/headshots/andrew_plaza.jpeg", // path of the logo
+            tier: 1,
+          },
+          google_example: {
+            logo: "/headshots/andrew_plaza.jpeg",
+            tier: 2,
+          },
+          baidu_example: {
+            logo: "/headshots/andrew_plaza.jpeg",
+            tier: 3,
           }
-        },
+        ],
       },
     },
     pathPrefix: '/',
