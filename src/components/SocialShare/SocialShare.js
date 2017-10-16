@@ -9,15 +9,18 @@ const StyledLink = styled.a`
 `;
 
 const getAllSocial = social => {
-  return social.map( item => 
-    <StyledLink href={item.link}>
+  let key = 0;
+  return social.map( item =>  {
+    key+=1;
+    return (
+    <StyledLink href={item.link} key={key}>
       <FontAwesome
         name={item.name}
         size={item.size}
         style={{color: '#fff'}}
       />
-    </StyledLink>
-  );
+    </StyledLink>);
+  });
 }
 
 const SocialShare = ({social}) => {
