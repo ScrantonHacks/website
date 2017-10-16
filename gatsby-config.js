@@ -67,19 +67,51 @@ module.exports = {
           title: 'Master Evil Genius',
         },
       ],
-        //logos and stuff go here
+      //logos and stuff go here
+      //tier 1: largest
+      //tier 2: medium
+      //tier 3: small
+      //order does not matter
         sponsors: [
           { // Facebook
-            logo: "/headshots/andrew_plaza.jpeg", // path of the logo
+            logo: "/sponsors/facebook_sponsor.svg", // path of the logo
             tier: 1,
+            partner: false,
           },
           { // Google
-            logo: "/headshots/andrew_plaza.jpeg",
+            logo: "/sponsors/google.png",
             tier: 2,
+            partner: false,
           },
           { // Baidu
-            logo: "/headshots/andrew_plaza.jpeg",
+            logo: "/sponsors/baidu.png",
             tier: 3,
+            partner: false,
+          },
+          {
+            logo: "/sponsors/Vanguard-Logo.jpg",
+            tier: 1,
+            partner: false,
+          },
+          {
+            logo: "/sponsors/android.png",
+            tier: 3,
+            partner: false,
+          },
+          {
+            logo: "/sponsors/apple.png",
+            tier: 2,
+            partner: false,
+          },
+          {
+            logo: "/sponsors/redhat.png",
+            tier: 3,
+            partner: false,
+          },
+          {
+            logo: "/sponsors/mlh.svg",
+            tier: 3,
+            partner: true,
           }
         ],
       },
