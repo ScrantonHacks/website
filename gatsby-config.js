@@ -97,11 +97,13 @@ module.exports = {
       //tier 2: medium
       //tier 3: small
       //order does not matter
+      //examples below
       sponsors: [
         { // Facebook
-          logo: "/sponsors/facebook_sponsor.svg", // path of the logo
+          logo: "", // path of the logo
           tier: 1,
         },
+        /*
         { // Google
           logo: "/sponsors/google.png",
           tier: 2,
@@ -125,12 +127,17 @@ module.exports = {
         {
           logo: "/sponsors/redhat.png",
           tier: 3,
-        },
+        }, */
       ],
       partners: [
         {
+          logo: '',
+        },
+        /*
+        {
           logo: "/sponsors/mlh.svg",
         }
+        */
       ],
     },
   },

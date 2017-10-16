@@ -6,8 +6,8 @@ import SocialShare from '../SocialShare';
 
 const StyledFooterContainer = styled(FooterContainer)`
   position: relative;
-  bottom: -11em;
   background-color: rgba(1, 109, 4, .95);
+  margin-top: 38em;
 `;
 
 const TextContainer = styled.div`
