@@ -62,7 +62,7 @@ export default class Index extends Component {
 
         <HackHero offset={3} title={[
           "echo '#! /bin/ScrantonHacks' > sponsors.sh",
-          "Our Sponsors"]} gradientBg>
+          "Our Sponsors"]} gradientBg factor={2} >
           <SponsorList sponsors={this.state.landingContent.sponsors} />
         </HackHero>
       </div>
@@ -96,6 +96,7 @@ query IndexQuery {
         sponsors {
           logo
           tier
+          partner
         }
       }
     }
