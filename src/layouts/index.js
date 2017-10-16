@@ -18,7 +18,7 @@ export default class IndexLayout extends React.Component {
   render() {
     return (
       <App style={{maxWidth: '100%'}}>
-        <Parallax ref='parallax' pages={4}>
+        <Parallax ref='parallax' pages={5}>
           {this.props.children()}
         </Parallax>
       </App>
