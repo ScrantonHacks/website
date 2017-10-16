@@ -9,6 +9,8 @@ import ScrantonHacksLogo from '../components/ScrantonHacksLogo';
 import ThreeIconsMotto from '../components/ThreeIconsMotto';
 import TeamPage from '../components/TeamPage';
 import SponsorList from '../components/SponsorList';
+import FAQPage from '../components/FAQPage';
+
 import Parallax from 'react-springy-parallax';
 
 import styled from 'styled-components';
@@ -56,26 +58,35 @@ export default class Index extends Component {
           <ThreeIconsMotto motto={this.state.landingContent.motto} />
         </HackHero>
 
-        <HackHero 
-          offset={2} 
-          title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]} 
+        <HackHero
+          offset={2}
+          title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]}
           gradientBg
           factor={2}
         >
           <TeamPage team={this.state.landingContent.team} />
         </HackHero>
 
-        <HackHero 
-          offset={3} 
+        <HackHero
+            offset={3}
+            title={["echo '#! /bin/ScrantonHacks' > questions.sh", "FAQ"]}
+            gradientBg
+            factor={1}
+        >
+        <FAQPage questionList={this.state.landingContent.questions} />
+        </HackHero>
+
+        <HackHero
+          offset={4}
           title={[
             "echo '#! /bin/ScrantonHacks' > sponsors.sh",
-            "Our Sponsors"]} 
-          gradientBg 
+            "Our Sponsors"]}
+          gradientBg
           factor={3}
         >
-          <SponsorList 
-            sponsors={this.state.landingContent.sponsors} 
-            partners={this.state.landingContent.partners}
+          <SponsorList
+            sponsors={this.state.landingContent.sponsors}
+            partners={this.state.landingContent.partners}z
           />
         </HackHero>
       </div>
@@ -96,6 +107,10 @@ query IndexQuery {
       }
       landingContent {
         about
+        questions {
+            q
+            a
+        }
         motto {
           build
           connect

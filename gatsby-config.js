@@ -20,6 +20,16 @@ module.exports = {
         connect: "Connect with the other leaders in your field - expand your perspectives, broaden your horizons, and build lasting networks.",
         learn: "We exist to the complement the knowledge and empower todays up-and-coming hackers.",
       },
+      questions: [
+         {
+              q: "This is a question.",
+              a: "This is an answer.",
+         },
+         {
+             q: "Another question.",
+             a: "Another answer.",
+         },
+      ],
       team: [
         {
           image: '/headshots/andrew_plaza.jpeg',
@@ -114,7 +124,7 @@ module.exports = {
     {
       resolve: 'custom-sass-loader',
       options: {
-        postCssPlugins: [ 
+        postCssPlugins: [
           autoprefixer({
             browsers: ['last 2 versions'],
           })
