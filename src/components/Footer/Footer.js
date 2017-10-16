@@ -1,10 +1,14 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
-import SocialShare from '../SocialShare';
 import styled from 'styled-components';
-import SocialInstagramIcon from 'grommet/components/icons/base/SocialInstagram';
-import SocialFacebookIcon from 'grommet/components/icons/base/SocialFacebook';
-import SocialTwitterIcon from 'grommet/components/icons/base/SocialTwitter';
+import FooterContainer from 'grommet/components/Footer';
+
+import SocialShare from '../SocialShare';
+
+const StyledFooterContainer = styled(FooterContainer)`
+  position: relative;
+  bottom: -11em;
+  background-color: rgba(1, 109, 4, .95);
+`;
 
 const TextContainer = styled.div`
   width: 45%;
@@ -12,23 +16,30 @@ const TextContainer = styled.div`
   color: #ddd;
 `;
 const StyledIcon = styled.a`
-	margin: 2em;
+  margin: 2em;
+  color: #fff !important;
 `;
 
 const StyledDiv = styled.div`
-	margin-top: 10em;
+  text-align: center;
+  margin-top: 1em;
+  margin: auto;
+  width: 100%;
+  padding-top: 1em;
 `;
 
-export default ({ data }) => {
+export default ({data}) => {
+  console.log("FOOTER");
+  console.log(data);
   return (
-  	<StyledDiv>
-  		<StyledIcon href = "https://www.instagram.com/scrantonhacks497/?hl=en"><SocialInstagramIcon size="medium" /></StyledIcon>
-  		<StyledIcon href = "https://www.instagram.com/scrantonhacks497/?hl=en"><SocialFacebookIcon size="medium" /></StyledIcon>
-  		<StyledIcon href = "https://www.instagram.com/scrantonhacks497/?hl=en"><SocialTwitterIcon size="medium" /></StyledIcon>
-  		<TextContainer>
-  			<h4>Made with  &#9829;  from Scranton.</h4>
-  		</TextContainer>
-  	</StyledDiv>
+  <StyledFooterContainer justify="between" size="medium">
+    <StyledDiv>
+      <SocialShare social={data}/>
+      <TextContainer>
+        <h4>Made with  &#9829;  in Scranton.</h4>
+      </TextContainer>
+    </StyledDiv>
+  </StyledFooterContainer>
   );
 }
 
