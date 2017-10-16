@@ -97,10 +97,10 @@ export default class HackHero extends Component {
 			);
 		}
 		return(
-			<div>
-				{this.getTitle()}
+      <ParallaxContainer backgrounds={Array()} offset={this.state.offset} factor={this.state.factor}>
+        {this.getTitle() ? this.getTitle() : ''}
 				{this.props.children}
-			</div>
+			</ParallaxContainer>
 		);
 	}
 }

@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
 import FontAwesome from 'react-fontawesome';
 
-export default ({ data }) => {
-  const social = data.social;
+const StyledLink = styled.a`
+  margin-right: 1em;
+`;
+
+const getAllSocial = social => {
+  return social.map( item => 
+    <StyledLink href={item.link}>
+      <FontAwesome
+        name={item.name}
+        size={item.size}
+        style={{color: '#fff'}}
+      />
+    </StyledLink>
+  );
+}
+
+const SocialShare = ({social}) => {
   return (
     <span>
-      <a href={social.facebook_link} className='margin-right-1em'>
-        <FontAwesome 
-            name='facebook'
-            size='2x' 
-        />
-      </a>
-      <a href={social.instagram_link} className='margin-right-1em'>
-        <FontAwesome
-          name='instagram'
-          size='2x'
-        /> 
-      </a>
-      <a href={social.twitter_link} className='margin-right-1em'>
-        <FontAwesome
-          name='twitter'
-          size='2x'
-        />
-      </a>
+      {getAllSocial(social)}
     </span>
   );
+}
+
+export default SocialShare;
+
+SocialShare.propTypes = {
+  social: PropTypes.array.isRequired,
 }
