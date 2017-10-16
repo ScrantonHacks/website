@@ -43,8 +43,8 @@ export default class Index extends Component {
   render() {
     return (
       <div>
-        <MetaTags 
-          title={this.state.siteMetadata.title} 
+        <MetaTags
+          title={this.state.siteMetadata.title}
           description={this.state.siteMetadata.description}
           path={``}
           tags={"hackathon, scranton, scrantonhacks, google, facebook, sponsors, mlh, github"}
