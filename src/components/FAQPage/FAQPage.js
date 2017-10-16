@@ -23,7 +23,7 @@ const getQuestions = (questionList) => {
   return questionList.map( (question) => {
     key += 1;
     return (
-        <TextContainer>
+        <TextContainer key={key}>
         <H2>{question.q}</H2>
         <H3>{question.a}</H3>
         </TextContainer>
@@ -34,7 +34,7 @@ const getQuestions = (questionList) => {
 
 export default ({questionList}) => {
   return (
-    <Columns justify="center" responsive maxCount='2'>
+    <Columns justify="center" responsive maxCount={2}>
       {getQuestions(questionList)}
     </Columns>
   );
