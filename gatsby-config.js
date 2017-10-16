@@ -4,15 +4,30 @@ module.exports = {
   siteMetadata: {
     title: 'Scranton Hacks 2017',
     description: '',
+    url: 'http://scrantonhacks.com',
     hackathonDate: 'Date: TBA',
     hackYear: '2017',
     sponsorEmail: 'sponsorship@scrantonhacks.com',
     hackathonLocation: 'University of Scranton Byron',
-    social: {
-      facebook_link: 'https://www.facebook.com/groups/397712937282963/',
-      twitter_link: 'https://twitter.com/HacksScranton',
-      instagram_link: 'https://www.instagram.com/scranton_hacks/',
-    },
+    //Name will translate to the 'icon' of this element.
+    //Make sure to follow font-awesome documentation on what icons are what names.
+    social: [
+      {
+        name: 'facebook',
+        size: '2x',
+        link: 'https://www.facebook.com/groups/397712937282963/'
+      },
+      {
+        name: 'twitter',
+        size: '2x',
+        link: 'https://twitter.com/ScrantonHacks'
+      },
+      {
+        name: 'instagram',
+        size: '2x',
+        link: 'https://www.instagram.com/scranton_hacks/'
+      }
+    ],
     landingContent: {
       about: "ScrantonHacks is a 24 Hour hackathon at the University of Scranton. We bring together students, regardless of background, to inspire and develop creative solutions to today's problems.",
       motto: {
@@ -82,11 +97,13 @@ module.exports = {
       //tier 2: medium
       //tier 3: small
       //order does not matter
+      //examples below
       sponsors: [
         { // Facebook
-          logo: "/sponsors/facebook_sponsor.svg", // path of the logo
+          logo: "", // path of the logo
           tier: 1,
         },
+        /*
         { // Google
           logo: "/sponsors/google.png",
           tier: 2,
@@ -110,12 +127,17 @@ module.exports = {
         {
           logo: "/sponsors/redhat.png",
           tier: 3,
-        },
+        }, */
       ],
       partners: [
         {
+          logo: '',
+        },
+        /*
+        {
           logo: "/sponsors/mlh.svg",
         }
+        */
       ],
     },
   },

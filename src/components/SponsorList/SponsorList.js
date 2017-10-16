@@ -38,7 +38,7 @@ const getPartners = partnerArray => {
 const SponsorList = ({sponsors, partners}) => {
   return (
     <div>
-      <Columns masonry maxCount={4} justify="top" responsive >
+      <Columns masonry maxCount={4} justify="between" responsive >
         {getSponsors(sponsors)}
       </Columns>
       <TextContainer size="2em">Partners</TextContainer>

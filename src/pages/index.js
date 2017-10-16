@@ -12,8 +12,10 @@ import SponsorList from '../components/SponsorList';
 import FAQPage from '../components/FAQPage';
 
 import Parallax from 'react-springy-parallax';
-
+import Footer from '../components/Footer';
+import MetaTags from '../components/MetaTags';
 import styled from 'styled-components';
+
 
 const TextContainer = styled.div`
 width: 45%;
@@ -41,6 +43,13 @@ export default class Index extends Component {
   render() {
     return (
       <div>
+        <MetaTags 
+          title={this.state.siteMetadata.title} 
+          description={this.state.siteMetadata.description}
+          path={``}
+          tags={"hackathon, scranton, scrantonhacks, google, facebook, sponsors, mlh, github"}
+          siteUrl={this.state.siteMetadata.url}
+        />
         <HackHero offset={0} scrantonVideo>
           <div className="text-center text-white">
             <ScrantonHacksLogo />
@@ -88,6 +97,8 @@ export default class Index extends Component {
             sponsors={this.state.landingContent.sponsors}
             partners={this.state.landingContent.partners}z
           />
+
+          <Footer data={this.state.siteMetadata.social}/>
         </HackHero>
       </div>
     );
@@ -100,10 +111,12 @@ query IndexQuery {
     siteMetadata {
       sponsorEmail
       title
+      description
+      url
       social {
-        facebook_link
-        twitter_link
-        instagram_link
+        name
+        size
+        link
       }
       landingContent {
         about
