@@ -56,13 +56,23 @@ export default class Index extends Component {
           <ThreeIconsMotto motto={this.state.landingContent.motto} />
         </HackHero>
 
-        <HackHero offset={2} title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]} gradientBg>
+        <HackHero 
+          offset={2} 
+          title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]} 
+          gradientBg
+          factor={2}
+        >
           <TeamPage team={this.state.landingContent.team} />
         </HackHero>
 
-        <HackHero offset={3} title={[
-          "echo '#! /bin/ScrantonHacks' > sponsors.sh",
-          "Our Sponsors"]} gradientBg factor={2}>
+        <HackHero 
+          offset={3} 
+          title={[
+            "echo '#! /bin/ScrantonHacks' > sponsors.sh",
+            "Our Sponsors"]} 
+          gradientBg 
+          factor={3}
+        >
           <SponsorList 
             sponsors={this.state.landingContent.sponsors} 
             partners={this.state.landingContent.partners}
