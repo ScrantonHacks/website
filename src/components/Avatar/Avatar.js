@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const AvatarContainer = styled.a`
@@ -69,9 +70,9 @@ const Avatar = ({link, img, name, title}) =>
 
 Avatar.propTypes = 
 {
-    link: React.PropTypes.string, 
-    img: React.PropTypes.string, 
-    name: React.PropTypes.string,
+    link: PropTypes.string, 
+    img: PropTypes.string, 
+    name: PropTypes.string,
 };
 
 Avatar.defaultProps = 

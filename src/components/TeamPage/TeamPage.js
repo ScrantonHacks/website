@@ -19,7 +19,7 @@ const getTeam = (team) => {
   return team.map( (member) => {
     key += 1;
     return (
-      <Avatar name={member.name} img={__PATH_PREFIX__ + member.image} link="http://twitter.com" title={member.title} />
+      <Avatar name={member.name} img={__PATH_PREFIX__ + member.image} link="http://twitter.com" title={member.title} key={key}/>
     );
   });
 }
