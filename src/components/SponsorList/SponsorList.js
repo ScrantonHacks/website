@@ -23,7 +23,7 @@ const getSponsors = sponsorArray => {
   let key = 0;
   return sortedSponsors.map( sponsor => {
     key += 1;
-    return <SponsorImage logo = {__PATH_PREFIX__ + sponsor.logo} tier = {sponsor.tier} key={key} /> 
+    return <SponsorImage logo = {__PATH_PREFIX__ + sponsor.logo} tier = {sponsor.tier} key={key} />
   });
 }
 
