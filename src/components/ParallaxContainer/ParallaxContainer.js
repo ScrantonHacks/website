@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Box from 'grommet/components/Box';
 import Parallax from 'react-springy-parallax';
 import styled from 'styled-components';
 
-/* bakgrounds go in order you want the depth to be
+/* backgrounds go in order you want the depth to be
  * so if you want a color in front of a video,
  * you pass the video first, and then the color to use
  */
@@ -11,34 +11,52 @@ const ParallaxBox = styled(Box)`
   padding-bottom: 3em !important;
 `;
 
-const getBackgrounds = (backgrounds, offset) => {
-  let key = 0;
-  return backgrounds.map((background) => {
-    console.log("OFFSET: " + offset);
-    key += 1;
-    if(typeof background.color !== 'undefined') {
+class ParallaxContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      children: props.children,
+      backgrounds: props.backgrounds,
+      offset: props.offset,
+      factor: props.factor,
+    };
+  }
+
+  getBackgrounds() {
+    let key = 0;
+    return this.state.backgrounds.map((background) => {
+      console.log("OFFSET: " + this.state.offset);
+      key += 1;
+      if(typeof background.color !== 'undefined') {
+        return (
+          <Parallax.Layer 
+            style={{backgroundColor: background.color}}
+            key={key}
+            offset={this.state.offset}
+            factor={this.state.factor}
+          />
+        );
+      }
       return (
-        <Parallax.Layer 
-          style={{backgroundColor: background.color}}
-          key={key}
-          offset={offset}
-        />
+        <Parallax.Layer offset={this.state.offset} key={key} factor={this.state.factor}>
+          {background}
+        </Parallax.Layer>
       );
-    }
+    });
+  }
+
+  render() {
     return (
-      <Parallax.Layer offset={offset} key={key}>
-        {background}
-      </Parallax.Layer>
+      <div>
+        {this.getBackgrounds()}
+        <Parallax.Layer offset={this.state.offset} speed={0.5} factor={this.state.factor} >
+          <ParallaxBox responsive size='full' textAlign='center' pad='none' margin='none' justify='center'>
+            {this.state.children}
+          </ParallaxBox>
+        </Parallax.Layer>
+      </div>
     );
-  })
+  }
 }
 
-export default ({children, backgrounds, offset}) =>
-  <div>
-    {getBackgrounds(backgrounds, offset)}
-    <Parallax.Layer offset={offset} speed={0.5}>
-      <ParallaxBox responsive size='full' textAlign='center' pad='none' margin='none' justify='center'>
-        {children}
-      </ParallaxBox>
-    </Parallax.Layer>
-  </div>;
+export default ParallaxContainer;
