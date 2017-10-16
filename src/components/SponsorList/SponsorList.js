@@ -6,13 +6,16 @@ import _ from 'lodash';
 import SponsorImage from '../SponsorImage';
 import Columns from 'grommet/components/Columns';
 
-const TextContainer = styled.h2`
+const TextContainer = styled.div.attrs({
+  mBottom: props => props.mBottom || '1em',
+})`
   width: 100%;
   margin:auto;
+  margin-bottom: ${props => props.mBottom};
   color: #dddccc;
-  margin-bottom: 2em;
   text-align: center;
-  font-weight: 1000;
+  font-weight: bold;
+  font-size: ${props => props.size};
 `;
 
 const getSponsors = sponsorArray => {
@@ -35,14 +38,15 @@ const getPartners = partnerArray => {
 const SponsorList = ({sponsors, partners}) => {
   return (
     <div>
-      <TextContainer>Sponsors</TextContainer>
-      <Columns masonry maxCount={4} justify="center" responsive >
-        {getSponsors(sponsors, partners)}
+      <Columns masonry maxCount={4} justify="top" responsive >
+        {getSponsors(sponsors)}
       </Columns>
-      <TextContainer>Partners</TextContainer>
+      <TextContainer size="2em">Partners</TextContainer>
       <Columns masonry maxCount={4} justify="center" responsive >
         {getPartners(partners)}
       </Columns>
+      <TextContainer size="1em" mBottom="0em">Looking to Sponsor ScrantonHacks?</TextContainer>
+      <TextContainer size="1em">Click Here or email sponsorship@scrantonhacks.com</TextContainer>
     </div>
   );
 };

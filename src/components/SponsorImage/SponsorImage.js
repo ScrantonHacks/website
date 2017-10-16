@@ -9,7 +9,7 @@ import styled from 'styled-components';
 const getImageWidth = (tier) => {
   if(tier === 3) return '6em'; //small
   else if (tier === 2 ) return '10em'; //medium
-  else return '30em'; //large
+  else return '20em'; //large
 }
 
 // small: height: 4, width: 11
