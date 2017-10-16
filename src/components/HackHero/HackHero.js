@@ -3,6 +3,7 @@ import Box from 'grommet/components/Box';
 import Granim from 'granim';
 import ScrollAnimation from 'react-animate-on-scroll';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import TypedTitle from '../TypedTitle';
 import ParallaxContainer from '../ParallaxContainer';
@@ -21,14 +22,18 @@ const Canvas = styled.canvas`
 `;
 
 export default class HackHero extends Component {
+  static defaultProps = {
+    factor: 1,
+  }
 	constructor(props) {
 		super(props);
 		this.state = {
 			chapter: props.chapter,
 			gradientBg: props.gradientBg,
 			style: props.style,
-			offset: props.offset,
-			scrantonVideo: props.scrantonVideo,
+      offset: props.offset,
+      factor: props.factor,
+      scrantonVideo: props.scrantonVideo,
 		};
 		this.granimSettings = {
 			element: `#canvas-${props.offset}`,
@@ -72,7 +77,8 @@ export default class HackHero extends Component {
 			return (
 				<ParallaxContainer 
 					backgrounds={Array(this.getGradientBg())} 
-					offset={this.state.offset}
+          offset={this.state.offset}
+          factor={this.state.factor}
 				>
 					<TypedTitle strings={this.props.title} />
 					{this.props.children}
@@ -91,10 +97,10 @@ export default class HackHero extends Component {
 			);
 		}
 		return(
-			<div>
-				{this.getTitle()}
+      <ParallaxContainer backgrounds={Array()} offset={this.state.offset} factor={this.state.factor}>
+        {this.getTitle() ? this.getTitle() : ''}
 				{this.props.children}
-			</div>
+			</ParallaxContainer>
 		);
 	}
 }

@@ -47,6 +47,7 @@ export default class MailchimpForm extends Component {
       completeMessage: props.completeMessage,
       helpText: props.helpText,
       action: props.action,
+      placeholder: props.placeholder,
     }
     this.validateEmail = this.validateEmail.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -132,16 +133,19 @@ export default class MailchimpForm extends Component {
   render() {
     return (
       <FormContainer className={this.getValid()}>
-      {!this.state.submitted ? 
+      {!this.state.submitted ?
         <div>
           <SubscribeForm pad='none' onSubmit={this.handleSubmit}>
-            <InputField type='email' onDOMChange={this.validateEmail} ref='email' placeHolder={this.state.placeholder} />
+            <InputField type='email'
+                        onDOMChange={this.validateEmail}
+                        ref='email'
+                        placeHolder={this.state.placeholder} />
             <br />
             <SplashButton label={this.props.buttonValue} type='submit' onClick={this.handleSubmit}/>
           </SubscribeForm>
           {this.state.showError ?
             <div>
-              {!this.state.valid && this.state.isTyping ? 
+              {!this.state.valid && this.state.isTyping ?
                 <div className='error'>{this.state.helpText}</div>
                 : null}
             </div>
