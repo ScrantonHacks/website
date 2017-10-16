@@ -34,7 +34,7 @@ const getQuestions = (questionList) => {
 
 export default ({questionList}) => {
   return (
-    <Columns justify="center" responsive maxCount='2'>
+    <Columns justify="center" responsive maxCount={2}>
       {getQuestions(questionList)}
     </Columns>
   );
