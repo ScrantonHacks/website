@@ -27,6 +27,5 @@ export default ({ data }) =>
   <Container>
     <SplashButton onClick={onSponsorClick} label='Become a Sponsor'/>
     <StyledText>Or email us at {data.sponsorEmail}</StyledText>
-    <SocialShare data={data} />
   </Container>
 ;
