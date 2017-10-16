@@ -72,63 +72,56 @@ module.exports = {
       //tier 2: medium
       //tier 3: small
       //order does not matter
-        sponsors: [
-          { // Facebook
-            logo: "/sponsors/facebook_sponsor.svg", // path of the logo
-            tier: 1,
-            partner: false,
-          },
-          { // Google
-            logo: "/sponsors/google.png",
-            tier: 2,
-            partner: false,
-          },
-          { // Baidu
-            logo: "/sponsors/baidu.png",
-            tier: 3,
-            partner: false,
-          },
-          {
-            logo: "/sponsors/Vanguard-Logo.jpg",
-            tier: 1,
-            partner: false,
-          },
-          {
-            logo: "/sponsors/android.png",
-            tier: 3,
-            partner: false,
-          },
-          {
-            logo: "/sponsors/apple.png",
-            tier: 2,
-            partner: false,
-          },
-          {
-            logo: "/sponsors/redhat.png",
-            tier: 3,
-            partner: false,
-          },
-          {
-            logo: "/sponsors/mlh.svg",
-            tier: 3,
-            partner: true,
-          }
-        ],
-      },
-    },
-    pathPrefix: '/',
-    plugins: [
-      {
-        resolve: 'custom-sass-loader',
-        options: {
-          postCssPlugins: [ 
-            autoprefixer({
-              browsers: ['last 2 versions'],
-            })
-          ]
+      sponsors: [
+        { // Facebook
+          logo: "/sponsors/facebook_sponsor.svg", // path of the logo
+          tier: 1,
+        },
+        { // Google
+          logo: "/sponsors/google.png",
+          tier: 2,
+        },
+        { // Baidu
+          logo: "/sponsors/baidu.png",
+          tier: 3,
+        },
+        {
+          logo: "/sponsors/Vanguard-Logo.jpg",
+          tier: 1,
+        },
+        {
+          logo: "/sponsors/android.png",
+          tier: 3,
+        },
+        {
+          logo: "/sponsors/apple.png",
+          tier: 2,
+        },
+        {
+          logo: "/sponsors/redhat.png",
+          tier: 3,
+        },
+      ],
+      partners: [
+        {
+          logo: "/sponsors/mlh.svg",
         }
-      },
-      `gatsby-plugin-styled-components`,
-      'gatsby-plugin-react-helmet'
+      ],
+    },
+  },
+  pathPrefix: '/',
+  plugins: [
+    {
+      resolve: 'custom-sass-loader',
+      options: {
+        postCssPlugins: [ 
+          autoprefixer({
+            browsers: ['last 2 versions'],
+          })
+        ]
+      }
+    },
+    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-react-helmet'
   ],
 }

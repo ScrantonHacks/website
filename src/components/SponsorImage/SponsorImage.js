@@ -6,16 +6,17 @@ import VisibilitySensor from 'react-visibility-sensor';
 import styled from 'styled-components';
 
 
-const getImageSize = (tier) => {
-  if(tier === 3) return {width: '6em', height: 'auto'}; //small
-  else if (tier === 2 ) return {width: '10em', height: 'auto'}; //medium
-  else return {width: '30em', height: 'auto'}; //large
+const getImageWidth = (tier) => {
+  if(tier === 3) return '6em'; //small
+  else if (tier === 2 ) return '10em'; //medium
+  else return '30em'; //large
 }
+
 // small: height: 4, width: 11
 // medium: height: 6, width: 19
 //
 const StyledImage = styled(Image)`
-  height: ${props => props.height};
+  height: auto;
   width: ${props => props.width};
   margin: auto;
   margin-bottom: 1em;
@@ -27,13 +28,12 @@ const SponsorImage = ({logo, tier}) =>
     <StyledImage 
       src={logo} 
       loader={<Spinner />} 
-      height={getImageSize(tier).height} 
-      width={getImageSize(tier).width}
+      width={getImageWidth(tier)}
     />
   </VisibilitySensor>
 
 SponsorImage.propTypes = {
-  image: PropTypes.string,
+  image: PropTypes.string.isRequired,
   tier: PropTypes.number,
 }
 
