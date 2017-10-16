@@ -59,21 +59,21 @@ export default class Index extends Component {
         </HackHero>
 
         <HackHero
-          offset={2}
-          title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]}
-          gradientBg
-          factor={2}
-        >
-          <TeamPage team={this.state.landingContent.team} />
-        </HackHero>
-
-        <HackHero
-            offset={3}
+            offset={2}
             title={["echo '#! /bin/ScrantonHacks' > questions.sh", "FAQ"]}
             gradientBg
             factor={1}
         >
         <FAQPage questionList={this.state.landingContent.questions} />
+        </HackHero>
+
+        <HackHero
+          offset={3}
+          title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]}
+          gradientBg
+          factor={2}
+        >
+          <TeamPage team={this.state.landingContent.team} />
         </HackHero>
 
         <HackHero
