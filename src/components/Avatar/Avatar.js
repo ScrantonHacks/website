@@ -1,26 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Box from 'grommet/components/Box';
 
 const AvatarContainer = styled.a`
+  display: flex;
+  margin-left: 1em;
+  margin-right: 1em;
   position: relative;
-  width: 12em;
   &:hover ${Overlay} & {
     opacity: 1; 
   }
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2em;
+  max-height: 220px;
+  max-width: 220px;
+  min-height: 100px;
+  min-width: 100px;
+
+  @media (max-height)
 `;
 
 const Image = styled.img`
   transition: background-color .5s;
-  width: 100%;
-  height: auto;
-  display: block;
+  display: inline-flex;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 100%;
+  border-radius: 50%;
+  padding: 1%;
+  height: auto;
+  width: auto;
 `;
 
 const Overlay = styled.div`
@@ -29,8 +36,6 @@ const Overlay = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   transition: .5s ease;
   background-color: rgb(108, 60, 109);
@@ -38,10 +43,14 @@ const Overlay = styled.div`
   ${AvatarContainer}: hover & {
     opacity: .85;
   }
+  padding: 1%;  // should same as Image padding
+  height: auto;
+  width: auto;
 `;
 
 const Name = styled.div`
   font-size: 1.3em;
+
   font-weight: 700;
   color: white;
   position: absolute;
@@ -50,6 +59,7 @@ const Name = styled.div`
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 `;
+
 const H5 = styled.h5`
   color: white;
   position: absolute;
@@ -66,7 +76,9 @@ const Avatar = ({link, img, name, title}) =>
       <Name>{name}</Name>
       <H5>{title}</H5>
     </Overlay>
-  </AvatarContainer>;
+  </AvatarContainer>
+  ;
+
 
 Avatar.propTypes = 
 {

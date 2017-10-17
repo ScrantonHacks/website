@@ -19,13 +19,13 @@ class ParallaxContainer extends Component {
       backgrounds: props.backgrounds,
       offset: props.offset,
       factor: props.factor,
+      name: props.name,
     };
   }
 
   getBackgrounds() {
     let key = 0;
     return this.state.backgrounds.map((background) => {
-      console.log("OFFSET: " + this.state.offset);
       key += 1;
       if(typeof background.color !== 'undefined') {
         return (
@@ -47,10 +47,19 @@ class ParallaxContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div name={this.state.name}>
         {this.getBackgrounds()}
         <Parallax.Layer offset={this.state.offset} speed={0.5} factor={this.state.factor} >
-          <ParallaxBox responsive size='full' textAlign='center' pad='none' margin='none' justify='center'>
+          <ParallaxBox 
+            responsive 
+            full 
+            textAlign='center' 
+            pad='none' 
+            flex 
+            margin='none' 
+            justify='start' 
+            align='center'
+          >
             {this.state.children}
           </ParallaxBox>
         </Parallax.Layer>

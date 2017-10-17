@@ -34,6 +34,7 @@ export default class HackHero extends Component {
       offset: props.offset,
       factor: props.factor,
       scrantonVideo: props.scrantonVideo,
+      name: props.name,
 		};
 		this.granimSettings = {
 			element: `#canvas-${props.offset}`,
@@ -97,7 +98,12 @@ export default class HackHero extends Component {
 			);
 		}
 		return(
-      <ParallaxContainer backgrounds={Array()} offset={this.state.offset} factor={this.state.factor}>
+      <ParallaxContainer 
+        backgrounds={Array()} 
+        offset={this.state.offset} 
+        factor={this.state.factor}
+        name={this.state.name}
+      >
         {this.getTitle() ? this.getTitle() : ''}
 				{this.props.children}
 			</ParallaxContainer>

@@ -37,7 +37,7 @@ export default class TypedTitle extends Component {
         strong
         tag='h2'
         margin='large'
-        style={{color: '#ddd', height: '1.3em'}}
+        style={{color: '#ddd', height: '1.5em'}}
       >
         <div ref={(el) => {this.el = el}}/>
       </Heading>

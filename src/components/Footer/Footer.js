@@ -5,9 +5,9 @@ import FooterContainer from 'grommet/components/Footer';
 import SocialShare from '../SocialShare';
 
 const StyledFooterContainer = styled(FooterContainer)`
-  position: relative;
+  position: absolute;
   background-color: rgba(1, 109, 4, .95);
-  margin-top: 38em;
+  bottom: 0;
 `;
 
 const TextContainer = styled.div`

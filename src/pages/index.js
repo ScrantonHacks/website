@@ -50,7 +50,7 @@ export default class Index extends Component {
           tags={"hackathon, scranton, scrantonhacks, google, facebook, sponsors, mlh, github"}
           siteUrl={this.state.siteMetadata.url}
         />
-        <HackHero offset={0} scrantonVideo>
+        <HackHero name="Title Page" offset={0} scrantonVideo>
           <div className="text-center text-white">
             <ScrantonHacksLogo />
             <SubscribeSplash title={this.state.siteMetadata.title} />
@@ -58,7 +58,7 @@ export default class Index extends Component {
           </div>
         </HackHero>
 
-        <HackHero offset={1} title={[
+        <HackHero name="About" offset={1} title={[
             "echo '#! /bin/ScrantonHacks' > about.sh",
             "About Us"]} gradientBg>
           <TextContainer>
@@ -68,6 +68,7 @@ export default class Index extends Component {
         </HackHero>
 
         <HackHero
+            name="FAQ"
             offset={2}
             title={["echo '#! /bin/ScrantonHacks' > questions.sh", "FAQ"]}
             gradientBg
@@ -77,6 +78,7 @@ export default class Index extends Component {
         </HackHero>
 
         <HackHero
+          name="Team Page"
           offset={3}
           title={["echo '#! /bin/ScrantonHacks' > team.sh", "Meet the Team"]}
           gradientBg
@@ -86,6 +88,7 @@ export default class Index extends Component {
         </HackHero>
 
         <HackHero
+          name="Sponsors"
           offset={4}
           title={[
             "echo '#! /bin/ScrantonHacks' > sponsors.sh",
